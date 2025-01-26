@@ -11,7 +11,7 @@ public class Bus {
     private int capacity;
     private boolean isWorking;
     private LocalDate lastServiceDate;
-    private String allocatedRoute;
+    private Route route;
 
     protected static List<Bus> busList = new ArrayList<>();
 
@@ -37,8 +37,8 @@ public class Bus {
         this.isWorking = status;
     }
 
-    public void allocateRoute(String route) {
-        this.allocatedRoute = route;
+    public void allocateRoute(Route route) {
+        this.route = route;
     }
 
     // GETTER METHODS
@@ -49,5 +49,7 @@ public class Bus {
     public static List<Bus> getBusList() {
         return busList;
     }
+
+
 
 }

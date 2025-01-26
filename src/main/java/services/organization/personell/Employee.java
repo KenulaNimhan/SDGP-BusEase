@@ -2,20 +2,25 @@ package services.organization.personell;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.*;
 
 public class Employee {
     // INITIALIZING INSTANCE VARIABLES
     private String employeeID;
     private String firstName;
     private String lastName;
+    private String NIC;
+    private LocalDate dateOfBirth;
 
     // INITIALIZING STATIC VARIABLES
     private static int employeeCount;
     private static final List<Employee> employees = new ArrayList<>();
 
-    public Employee(String fName, String lName) {
+    public Employee(String fName, String lName, String NIC, LocalDate dateOfBirth) {
         this.firstName = fName;
         this.lastName  = lName;
+        this.NIC = NIC;
+        this.dateOfBirth = dateOfBirth;
         this.employeeID = "EM-"+employees.size()+1;
         employees.add(this);
     }
@@ -54,7 +59,10 @@ public class Employee {
         return String.format("""
                 Name : %s %s
                 EmpID: %s
-                """, this.firstName, this.lastName, this.employeeID);
+                NIC  : %s
+                DOB  : %s
+                ---------
+                """, this.firstName, this.lastName, this.employeeID, this.NIC, this.dateOfBirth);
     }
 
 }

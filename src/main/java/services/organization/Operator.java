@@ -15,6 +15,7 @@ public class Operator {
     // OPERATOR ATTRIBUTES
     private String userName;
     private String password;
+    private int accessLevel;
 
     private static List<Operator> opsList = new ArrayList<>();
 
@@ -50,9 +51,14 @@ public class Operator {
     public void createEmp() {
         System.out.println("enter first name: ");
         String fName = scan.next();
-        System.out.println("enter last name; ");
+        System.out.println("enter last name: ");
         String lName = scan.next();
-        new Employee(fName, lName);
+        System.out.println("enter NIC: ");
+        String NIC = scan.next();
+        System.out.println("enter date of birth: ");
+        String dateOfBirth = scan.next();
+        LocalDate DOB = LocalDate.parse(dateOfBirth);
+        new Employee(fName, lName, NIC, DOB);
         System.out.println("new employee created successfully");
     }
 
@@ -92,6 +98,7 @@ public class Operator {
         // ADDING BUS TO THE LIST OF BUSES
         if (isValidVehicleNumber(vehicleNo)){
             Bus.getBusList().add(new Bus(vehicleNo));
+            Logger.log("user- "+ this.userName +" added bus "+vehicleNo);
             System.out.println("vehicle added successfully");
         } else {
             System.out.println("vehicle number not valid");
@@ -132,7 +139,6 @@ public class Operator {
                 && vNumbers.matches("[0-9]+")
                 && vMiddle.matches("-"))
             {isValid = true;}
-            Logger.log("user added bus "+vehicleNo);
         }
         return isValid;
     }

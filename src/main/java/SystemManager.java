@@ -8,13 +8,11 @@ public class SystemManager {
     private static final List<Bus> busList = Bus.getBusList();
     private static int userChoice;
     // CREATING AN OPERATOR FOR TESTING PURPOSES
-    private static final Operator mainOps = new Operator("Kenula", "1234");
-    private static final Operator secondaryOps = new Operator("Nimhan", "5678");
+    private static final Operator mainOps = new Operator("Admin", "0000");
 
     public static void main(String[] args){
         // ADDING OPS TO OPS LIST
         Operator.getOpsList().add(mainOps);
-        Operator.getOpsList().add(secondaryOps);
 
         mainMenu();
 
@@ -36,7 +34,9 @@ public class SystemManager {
                     resume = false;
                     break;
                 case 1:
-                    operatorLoginMenu();
+                    formatDisplay();
+                    loginOperator();
+                    formatDisplay();
                     break;
             }
         }
@@ -46,7 +46,7 @@ public class SystemManager {
      * displays the main menu interface.
      */
     private static void displayMainMenu() {
-        System.out.println("""
+        System.out.print("""
             -------------------------------------------------
             *                   MAIN MENU                   *
             -------------------------------------------------
@@ -58,12 +58,7 @@ public class SystemManager {
             """);
     }
 
-    private static void operatorLoginMenu() {
-        System.out.println("""
-            -------------------------------------------------
-            *                OPERATOR LOGIN                 *
-            -------------------------------------------------
-            """);
+    private static void loginOperator() {
         System.out.print("enter username: ");
         String username = scan.nextLine();
         System.out.print("enter password: ");
@@ -85,7 +80,7 @@ public class SystemManager {
         // INITIALIZING VARIABLES
         boolean resume = true;
 
-        System.out.println("""
+        System.out.print("""
             -------------------------------------------------
             *                 OPERATOR MENU                 *
             -------------------------------------------------
@@ -106,16 +101,24 @@ public class SystemManager {
                     displayMainMenu();
                     break;
                 case 1:
+                    formatDisplay();
                     opsUser.createEmp();
+                    formatDisplay();
                     break;
                 case 2:
+                    formatDisplay();
                     opsUser.viewEmployees();
+                    formatDisplay();
                     break;
                 case 3:
+                    formatDisplay();
                     opsUser.viewBusList();
+                    formatDisplay();
                     break;
                 case 4:
+                    formatDisplay();
                     opsUser.addBus();
+                    formatDisplay();
                     break;
             }
         }
@@ -146,5 +149,9 @@ public class SystemManager {
         }
         scan.nextLine();
         return userChoice;
+    }
+
+    public static void formatDisplay() {
+        System.out.println("\u001B[34m------\u001B[0m");
     }
 }
