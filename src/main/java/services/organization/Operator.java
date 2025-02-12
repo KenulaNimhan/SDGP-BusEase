@@ -16,9 +16,12 @@ public class Operator {
     // OPERATOR ATTRIBUTES
     private String username;
     private String password;
+    private String email;
     private String firstName;
     private String lastName;
     private String userRole;
+
+    private static final String[] userRoles = {"superAdmin", "  secondaryAdmin", "tertiaryAdmin"};
 
     private static List<Operator> opsList = new ArrayList<>();
 
@@ -64,8 +67,10 @@ public class Operator {
         String NIC = scan.next();
         System.out.println("enter date of birth: ");
         String dateOfBirth = scan.next();
-        LocalDate DOB = LocalDate.parse(dateOfBirth);
-        new Employee(fName, lName, NIC, DOB);
+        // DOB = LocalDate.parse(dateOfBirth);
+        Employee emp = new Employee(fName, lName, NIC, dateOfBirth);
+        Logger.log(this.username+" created EMP;\n"+emp+"\n");
+        jsonHandler.saveEmployeeData();
         System.out.println("new employee created successfully");
     }
 
@@ -107,8 +112,9 @@ public class Operator {
         String vehicleNo = scan.next();
         // ADDING BUS TO THE LIST OF BUSES
         if (isValidVehicleNumber(vehicleNo)){
-            Bus.getBusList().add(new Bus(vehicleNo));
+            new Bus(vehicleNo);
             Logger.log("user- "+ this.username +" added bus "+vehicleNo);
+            jsonHandler.saveBusData();
             System.out.println("vehicle added successfully");
         } else {
             System.out.println("vehicle number not valid");
@@ -126,6 +132,43 @@ public class Operator {
             bus.setLastServiceDate(date);
         } else {
             System.out.println("date invalid.");
+        }
+    }
+
+    public void changeUsername() {
+        System.out.print("enter current password: ");
+        String psw = scan.next();
+        if (!this.password.equals(psw)) {
+            System.out.println("current password incorrect");
+            return;
+        }
+        System.out.print("enter new username: ");
+        String newUsername = scan.next();
+        if (isValidUsername(newUsername)) {
+            this.setUsername(newUsername);
+            System.out.println("username changed successfully");
+            jsonHandler.saveOperatorData(this);
+        } else {
+            System.out.println("invalid username. please try again");
+        }
+
+    }
+
+    public void changePassword() {
+        System.out.print("enter current password: ");
+        String psw = scan.next();
+        if (!this.password.equals(psw)) {
+            System.out.println("current password incorrect");
+            return;
+        }
+        System.out.print("enter new password: ");
+        String newPassword = scan.next();
+        if (isValidPassword(newPassword)) {
+            this.setPassword(newPassword);
+            System.out.println("password changed successfully");
+            jsonHandler.saveOperatorData(this);
+        } else {
+            System.out.println("invalid password. please try again");
         }
     }
 
@@ -153,10 +196,18 @@ public class Operator {
         return isValid;
     }
 
+    public boolean isValidUsername(String username) {
+        return true;
+    }
+
+    public boolean isValidPassword(String psw) {
+        return true;
+    }
+
     // STATIC VALIDATOR METHODS
     public static boolean isValidOperator(String userName, String password) {
         boolean isValid = false;
-        Operator validOps = jsonHandler.readMainAdmin();
+        Operator validOps = jsonHandler.loadOperatorData();
         if (validOps != null){
             if (validOps.username.matches(userName) && validOps.password.matches(password)){
                 isValid = true;
@@ -172,5 +223,9 @@ public class Operator {
 
          */
         return isValid;
+    }
+
+    public static boolean isAuthorised(String currentUserRole, String authorisedUserRole) {
+        return currentUserRole.equals(authorisedUserRole);
     }
 }

@@ -1,5 +1,6 @@
 import services.organization.*;
 import java.util.*;
+import core.util.jsonHandler;
 
 public class SystemManager {
     // INITIALIZING SCANNER
@@ -73,6 +74,9 @@ public class SystemManager {
      * @param opsUser the operator who is accessing in that instance.
      */
     private static void organizationMenu(Operator opsUser) {
+        // LOADING ESSENTIAL FILES
+        jsonHandler.loadBusData();
+        jsonHandler.loadEmployeeData();
         // INITIALIZING VARIABLES
         boolean resume = true;
 
@@ -84,12 +88,14 @@ public class SystemManager {
                  2) View Employees
                  3) View Bus List
                  4) Add Bus
+                 5) Change My Username
+                 6) Change My Password
                  0) Main Menu
             -------------------------------------------------
             """);
 
         while (resume) {
-            userChoice = inputPromptLoop(0,4);
+            userChoice = inputPromptLoop(0,6);
 
             switch(userChoice) {
                 case 0:
@@ -116,6 +122,16 @@ public class SystemManager {
                     opsUser.addBus();
                     formatDisplay();
                     break;
+                case 5:
+                    formatDisplay();
+                    opsUser.changeUsername();
+                    formatDisplay();
+                    break;
+                case 6:
+                    formatDisplay();
+                    opsUser.changePassword();
+                    formatDisplay();
+                    break;
             }
         }
     }
@@ -131,7 +147,7 @@ public class SystemManager {
         int userChoice;
 
         while(true){
-            System.out.print("enter your selection: ");
+            System.out.print("\u001B[44m\u001B[30m enter your selection:\u001B[0m ");
             try{
                 userChoice = scan.nextInt();
                 if (userChoice>=rangeStart && userChoice<=rangeEnd){
@@ -141,6 +157,7 @@ public class SystemManager {
                 }
             } catch (InputMismatchException e){
                 System.out.println("invalid selection");
+                scan.nextLine(); // used to collect the invalid input
             }
         }
         scan.nextLine();
@@ -149,5 +166,21 @@ public class SystemManager {
 
     public static void formatDisplay() {
         System.out.println("\u001B[34m------\u001B[0m");
+    }
+    public static void formatDisplay(String color) {
+        switch (color) {
+            case "red":
+                System.out.println("\u001B[31m------\u001B[0m");
+                break;
+            case "green":
+                System.out.println("\u001B[32m------\u001B[0m");
+                break;
+            case "yellow":
+                System.out.println("\u001B[33m------\u001B[0m");
+                break;
+            default:
+                System.out.println("\u001B[34m------\u001B[0m");
+        }
+
     }
 }

@@ -6,8 +6,8 @@ public class Logger {
     protected static File logFolder = new File("src/main/resources/Logs");
 
     /**
-     * Logs message to a file.
-     * @param msg = message.
+     * Logs general message to a file.
+     * @param msg = message(String).
      */
     public static void log(String msg) {
         if(logFolder.mkdir()){System.out.println("log folder created");}
@@ -20,7 +20,7 @@ public class Logger {
     }
 
     /**
-     * logs error message to a file.
+     * Logs error message to a file.
      * @param exc = exception.
      */
     public static void log(Exception exc) {
