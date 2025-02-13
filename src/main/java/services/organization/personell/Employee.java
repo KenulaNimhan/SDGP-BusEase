@@ -10,19 +10,19 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String NIC;
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
     // INITIALIZING STATIC VARIABLES
-    private static int employeeCount;
-    private static final List<Employee> employees = new ArrayList<>();
+    private static List<Employee> employeeList = new ArrayList<>();
 
-    public Employee(String fName, String lName, String NIC, LocalDate dateOfBirth) {
+    public Employee(){};
+    public Employee(String fName, String lName, String NIC, String dateOfBirth) {
         this.firstName = fName;
         this.lastName  = lName;
         this.NIC = NIC;
         this.dateOfBirth = dateOfBirth;
-        this.employeeID = "EM-"+employees.size()+1;
-        employees.add(this);
+        this.employeeID = "EM-"+employeeList.size()+1;
+        employeeList.add(this);
     }
 
     // GETTER METHODS
@@ -36,10 +36,16 @@ public class Employee {
     public String getEmployeeID() {
         return employeeID;
     }
+    public String getNIC() {
+        return NIC;
+    }
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
 
     // GETTER METHODS FOR STATIC VARIABLES
     public static List<Employee> getEmployeeList() {
-        return employees;
+        return employeeList;
     }
 
     // SETTER METHODS
@@ -51,7 +57,21 @@ public class Employee {
         this.lastName = lastName;
     }
     public void setEmployeeID() {
-        this.employeeID = "EM-"+employees.size();
+        this.employeeID = "EM-"+employeeList.size();
+    }
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
+    }
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    // SETTER METHODS FOR STATIC VARIABLES
+    public static void setEmployees(ArrayList<Employee> employees){
+        employeeList = employees;
     }
 
     // OTHER METHODS

@@ -16,8 +16,10 @@ public class Bus {
     protected static List<Bus> busList = new ArrayList<>();
 
     // CONSTRUCTORS
+    public Bus() {};
     public Bus(String vehicleNo) {
         this.vehicleNo = vehicleNo;
+        busList.add(this);
     }
 
     // SETTER METHODS
@@ -39,6 +41,10 @@ public class Bus {
 
     public void allocateRoute(Route route) {
         this.route = route;
+    }
+
+    public static void setBusList(ArrayList<Bus> buses) {
+        busList = buses;
     }
 
     // GETTER METHODS
