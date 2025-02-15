@@ -1,5 +1,8 @@
 package services.organization;
 
+import java.sql.Date;
+import java.time.DateTimeException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import core.util.Logger;
@@ -57,22 +60,86 @@ public class Operator {
 
     /**
      * creates an employee object
+     *
+     * @return
      */
-    public void createEmp() {
-        System.out.println("enter first name: ");
-        String fName = scan.next();
-        System.out.println("enter last name: ");
-        String lName = scan.next();
-        System.out.println("enter NIC: ");
-        String NIC = scan.next();
-        System.out.println("enter date of birth: ");
-        String dateOfBirth = scan.next();
-        // DOB = LocalDate.parse(dateOfBirth);
+    public boolean createEmp() {
+
+        String fName;
+        String lName;
+        String NIC;
+        String dateOfBirth = "";
+
+        while (true){
+
+            System.out.println("Enter first name: ");
+            fName = scan.next();
+
+            if (fName.matches(".*\\d.*")){
+                System.out.println(" Invalid input! First name should not contain numbers. Please input again.");
+            }
+            else {
+                break;
+            }
+
+        }
+
+        while (true){
+            System.out.println("Enter last name: ");
+            lName = scan.next();
+            if(lName.matches(".*\\d.*")){
+                System.out.println(" Invalid input! Last name should not contain numbers. Please input again.");
+            }
+            else {
+                break;
+            }
+        }
+
+        while(true){
+            System.out.println("enter date of birth: ");
+            dateOfBirth = scan.next();
+            if (isValidDate(dateOfBirth)) {
+                break;
+            }
+            else {
+                System.out.println("Invalid date format! Please enter in yyyy-MM-dd format. example: (1111-01-10 )");
+            }
+        }
+
+        while(true){
+            System.out.println("enter NIC: ");
+            NIC = scan.next();
+            if (NIC.matches("\\d{10}")|| NIC.matches("\\d{12}")) {
+                break;
+            }
+            else {
+                System.out.println(" Invalid NIC! NIC must be 10 or 12 numeric digits. Please input again.");
+            }
+        }
+
         Employee emp = new Employee(fName, lName, NIC, dateOfBirth);
         Logger.log(this.username+" created EMP;\n"+emp+"\n");
         jsonHandler.saveEmployeeData();
         System.out.println("new employee created successfully");
+
+        return true;
     }
+
+    /**
+     *
+     * Validates if the given date is in YYYY-MM-dd format.
+     */
+    private boolean isValidDate(String date){
+        try{
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate.parse(date, formatter);
+            return true;
+        }
+        catch (DateTimeException e) {
+            return false;
+        }
+    }
+
 
     /**
      * views the current list of employees
@@ -82,6 +149,7 @@ public class Operator {
             System.out.println("employee list is empty");
         } else {
             System.out.println("--list of employees--");
+            System.out.println(" ");
             for(Employee emp: Employee.getEmployeeList()){
                 System.out.println(emp);
             }
