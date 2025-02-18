@@ -124,3 +124,27 @@ DOB  : 2022-10-10
 ---------
 
 
+2025-02-18T10:53:59.283196900 admin created EMP;
+Name : NewEmployee NewLastname
+EmpID: EM-31
+NIC  : 123456789v
+DOB  : 1111-02-10
+---------
+
+
+2025-02-18T11:08:58.746429700 admin created EMP;
+Name : virul eksan
+EmpID: EM-41
+NIC  : 123456789123
+DOB  : 1920-10-10
+---------
+
+
+2025-02-18T11:47:04.055439300 admin created EMP;
+Name : admin admin
+EmpID: EM-51
+NIC  : 123456789123
+DOB  : 2025-02-18
+---------
+
+
