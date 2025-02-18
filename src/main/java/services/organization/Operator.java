@@ -73,10 +73,10 @@ public class Operator {
         while (true){
 
             System.out.println("Enter first name: ");
-            fName = scan.next();
+            fName = scan.next().trim();
 
-            if (fName.matches(".*\\d.*")){
-                System.out.println(" Invalid input! First name should not contain numbers. Please input again.");
+            if (!fName.matches("[a-zA-Z]+")){
+                System.out.println(" Invalid input! First name should not contain numbers or special characters. Please input again.");
             }
             else {
                 break;
@@ -86,9 +86,10 @@ public class Operator {
 
         while (true){
             System.out.println("Enter last name: ");
-            lName = scan.next();
-            if(lName.matches(".*\\d.*")){
-                System.out.println(" Invalid input! Last name should not contain numbers. Please input again.");
+            lName = scan.next().trim();
+
+            if(!lName.matches("[a-zA-Z]+")){
+                System.out.println(" Invalid input! Last name should not contain numbers or special characters. Please input again.");
             }
             else {
                 break;
