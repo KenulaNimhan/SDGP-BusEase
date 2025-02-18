@@ -1,5 +1,6 @@
 package services.organization;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ public class Bus {
     private boolean isWorking;
     private LocalDate lastServiceDate;
     private Route route;
+    private String model;
 
     protected static List<Bus> busList = new ArrayList<>();
 
@@ -19,6 +21,13 @@ public class Bus {
     public Bus() {};
     public Bus(String vehicleNo) {
         this.vehicleNo = vehicleNo;
+        busList.add(this);
+    }
+    public Bus(String vehicleNo, String model, int capacity, Route route) {
+        this.vehicleNo = vehicleNo;
+        this.model = model;
+        this.capacity = capacity;
+        this.route = route;
         busList.add(this);
     }
 
@@ -56,6 +65,44 @@ public class Bus {
         return busList;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public boolean isWorking() {
+        return isWorking;
+    }
+
+    public LocalDate getLastServiceDate() {
+        return lastServiceDate;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
 
 
+    @Override
+public String toString() {
+    return String.format("""
+            VehicleNo: %s
+            Model: %s
+            Capacity: %d
+            Route: %s
+            ---------------------------
+            """, this.vehicleNo, this.model, this.capacity, this.route
+    );
+
+    }
 }
+
+
+
