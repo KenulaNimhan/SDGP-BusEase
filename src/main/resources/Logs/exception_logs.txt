@@ -9,3 +9,11 @@
 2025-01-31T15:32:52.422758900 Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: java.util.ArrayList[0]->services.organization.personell.Employee["dateOfBirth"])
 2025-01-31T15:35:03.345242300 Unexpected end-of-input within/between Object entries
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 76] (through reference chain: java.lang.Object[][0])
+2025-02-18T20:34:35.699984600 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[2]->services.organization.Bus["route"])
+2025-02-18T20:35:54.073257300 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
+2025-02-18T20:38:07.590142900 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
+2025-02-18T20:42:54.644377100 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
+2025-02-18T20:43:12.386170100 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])
