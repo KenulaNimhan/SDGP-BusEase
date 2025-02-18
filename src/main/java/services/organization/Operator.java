@@ -2,6 +2,7 @@ package services.organization;
 
 import java.sql.Date;
 import java.time.DateTimeException;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -72,49 +73,52 @@ public class Operator {
 
         while (true){
 
-            System.out.println("Enter first name: ");
+            System.out.println("Enter first name: "); //Getting First Name from User
             fName = scan.next().trim();
 
-            if (!fName.matches("[a-zA-Z]+")){
-                System.out.println(" Invalid input! First name should not contain numbers or special characters. Please input again.");
+            if (isValidName(fName)){ // Validate by using regex method
+                break;
             }
             else {
-                break;
+                System.out.println(" Invalid input! First name should not contain numbers or special characters. Please input again.");
+
             }
 
         }
 
         while (true){
-            System.out.println("Enter last name: ");
+            System.out.println("Enter last name: "); //Getting Last Name from User
             lName = scan.next().trim();
 
-            if(!lName.matches("[a-zA-Z]+")){
+            if(isValidName(lName)){ // Validate by using regex method
+                break;
+            }
+            else {
                 System.out.println(" Invalid input! Last name should not contain numbers or special characters. Please input again.");
-            }
-            else {
-                break;
+
             }
         }
 
         while(true){
-            System.out.println("enter date of birth: ");
+            System.out.println("Enter date of birth (YYYY-MM-dd): "); //Getting Date of Birth from User
             dateOfBirth = scan.next();
-            if (isValidDate(dateOfBirth)) {
+
+            if (isValidYear(dateOfBirth) && isValidYear(dateOfBirth)) { // Validate by using DateTimeFormatter format
                 break;
             }
             else {
-                System.out.println("Invalid date format! Please enter in yyyy-MM-dd format. example: (1111-01-10 )");
+                System.out.println("Invalid date! Please enter in yyyy-MM-dd format and the year is between 1920 and 3000 . example: (1920-01-20)");
             }
         }
 
         while(true){
-            System.out.println("enter NIC: ");
+            System.out.println("enter NIC: "); //Getting NIC Number from User
             NIC = scan.next();
-            if (NIC.matches("\\d{9}[Vv]")|| NIC.matches("\\d{10}") ||NIC.matches("\\d{12}")) {
+            if (isValidNIC(NIC)) { // Validate by using regex method
                 break;
             }
             else {
-                System.out.println(" Invalid NIC! NIC must be 10 or 12 numeric digits. Please input again.");
+                System.out.println(" Invalid NIC! NIC must be 9 digits followed by 'V' or 'v',  12 numeric digits. Please input again.");
             }
         }
 
@@ -127,18 +131,40 @@ public class Operator {
     }
 
     /**
-     *
-     * Validates if the given date is in YYYY-MM-dd format.
+     * Validates that the given name contains only letters (no numbers or special characters).
+     * @param name the input name
+     * @return true if valid, false otherwise
      */
-    private boolean isValidDate(String date){
+    private boolean isValidName(String name){
+        return name.matches("[a-zA-Z]+");
+    }
+
+    /**
+     * Validates if the given date is in YYYY-MM-dd format.
+     * @param date the input date
+     * @return true id valid, false otherwise
+     */
+    private boolean isValidYear(String date){
         try{
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            LocalDate.parse(date, formatter);
-            return true;
+           LocalDate parsedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+           int year = parsedDate.getYear();
+           return year >= 1920 && year <= 3000;
         }
         catch (DateTimeException e) {
             return false;
         }
+    }
+
+    /**
+     * Validates NIC (National Identity Card) number format.
+     * Acceptable formats:
+     * -9 digits followed by 'V' or 'v' (eg: 123456789V)
+     * -12-digit number (eg:200512345678)
+     * @param nic the input NIC
+     * @return true if valid, false otherwise
+     */
+    private boolean isValidNIC(String nic){
+        return nic.matches("\\d{9}[Vv]") || nic.matches("\\d{12}");
     }
 
 
