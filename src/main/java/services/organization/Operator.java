@@ -109,7 +109,7 @@ public class Operator {
         while(true){
             System.out.println("enter NIC: ");
             NIC = scan.next();
-            if (NIC.matches("\\d{10}")|| NIC.matches("\\d{12}")) {
+            if (NIC.matches("\\d{9}[Vv]")|| NIC.matches("\\d{10}") ||NIC.matches("\\d{12}")) {
                 break;
             }
             else {
