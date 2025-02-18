@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57ff31b-15f4-4bd7-9c03-a45c3821335d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/organization/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Logs/general_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Logs/general_logs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminCred.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminCred.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/employeeData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employeeData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SystemManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SystemManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/organization/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/organization/Operator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
