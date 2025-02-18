@@ -21,7 +21,7 @@ public class Employee {
         this.lastName  = lName;
         this.NIC = NIC;
         this.dateOfBirth = dateOfBirth;
-        this.employeeID = "EM-"+employeeList.size()+1;
+        this.employeeID = "EM-"+(employeeList.size()+1);
         employeeList.add(this);
     }
 

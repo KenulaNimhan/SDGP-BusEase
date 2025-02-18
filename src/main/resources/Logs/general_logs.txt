@@ -148,3 +148,37 @@ DOB  : 2025-02-18
 ---------
 
 
+2025-02-18T20:33:44.525121800 admin created EMP;
+Name : Kenu Nimhan
+EmpID: EM-31
+NIC  : 200213800690
+DOB  : 2002-05-17
+---------
+
+
+2025-02-18T20:34:35.677827500 User admin added bus WI-7854
+2025-02-18T20:36:18.842994400 admin created EMP;
+Name : New EMpl
+EmpID: EM-5
+NIC  : 201923948576
+DOB  : 2002-04-21
+---------
+
+
+2025-02-18T20:38:25.688664500 admin created EMP;
+Name : Kenula Nimhan
+EmpID: EM-6
+NIC  : 200234559056
+DOB  : 2002-05-26
+---------
+
+
+2025-02-18T20:43:12.363282400 User admin added bus VehicleNo: WE-7896
+Model: Tata
+Capacity: 49
+Route: Route Code: 138
+Destinations: [Maharagama, Vijerama, Nugegoda, Kirlupana, Thibirigasyaya]
+Start Time: 12:12
+End Time: 13:13
+---------------------------
+
