@@ -2,7 +2,7 @@ package services.organization;
 
 import java.sql.Date;
 import java.time.DateTimeException;
-import java.time.Year;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -73,52 +73,48 @@ public class Operator {
 
         while (true){
 
-            System.out.println("Enter first name: "); //Getting First Name from User
-            fName = scan.next().trim();
+            System.out.println("Enter first name: ");
+            fName = scan.next();
 
-            if (isValidName(fName)){ // Validate by using regex method
-                break;
+            if (fName.matches(".*\\d.*")){
+                System.out.println(" Invalid input! First name should not contain numbers. Please input again.");
             }
             else {
-                System.out.println(" Invalid input! First name should not contain numbers or special characters. Please input again.");
-
+                break;
             }
 
         }
 
         while (true){
-            System.out.println("Enter last name: "); //Getting Last Name from User
-            lName = scan.next().trim();
-
-            if(isValidName(lName)){ // Validate by using regex method
-                break;
+            System.out.println("Enter last name: ");
+            lName = scan.next();
+            if(lName.matches(".*\\d.*")){
+                System.out.println(" Invalid input! Last name should not contain numbers. Please input again.");
             }
             else {
-                System.out.println(" Invalid input! Last name should not contain numbers or special characters. Please input again.");
-
+                break;
             }
         }
 
         while(true){
-            System.out.println("Enter date of birth (YYYY-MM-dd): "); //Getting Date of Birth from User
+            System.out.println("enter date of birth: ");
             dateOfBirth = scan.next();
-
-            if (isValidYear(dateOfBirth) && isValidYear(dateOfBirth)) { // Validate by using DateTimeFormatter format
+            if (isValidDate(dateOfBirth)) {
                 break;
             }
             else {
-                System.out.println("Invalid date! Please enter in yyyy-MM-dd format and the year is between 1920 and 3000 . example: (1920-01-20)");
+                System.out.println("Invalid date format! Please enter in yyyy-MM-dd format. example: (1111-01-10 )");
             }
         }
 
         while(true){
-            System.out.println("enter NIC: "); //Getting NIC Number from User
+            System.out.println("enter NIC: ");
             NIC = scan.next();
-            if (isValidNIC(NIC)) { // Validate by using regex method
+            if (NIC.matches("\\d{10}")|| NIC.matches("\\d{12}")) {
                 break;
             }
             else {
-                System.out.println(" Invalid NIC! NIC must be 9 digits followed by 'V' or 'v',  12 numeric digits. Please input again.");
+                System.out.println(" Invalid NIC! NIC must be 10 or 12 numeric digits. Please input again.");
             }
         }
 
@@ -131,40 +127,18 @@ public class Operator {
     }
 
     /**
-     * Validates that the given name contains only letters (no numbers or special characters).
-     * @param name the input name
-     * @return true if valid, false otherwise
-     */
-    private boolean isValidName(String name){
-        return name.matches("[a-zA-Z]+");
-    }
-
-    /**
+     *
      * Validates if the given date is in YYYY-MM-dd format.
-     * @param date the input date
-     * @return true id valid, false otherwise
      */
-    private boolean isValidYear(String date){
+    private boolean isValidDate(String date){
         try{
-           LocalDate parsedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-           int year = parsedDate.getYear();
-           return year >= 1920 && year <= 3000;
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate.parse(date, formatter);
+            return true;
         }
         catch (DateTimeException e) {
             return false;
         }
-    }
-
-    /**
-     * Validates NIC (National Identity Card) number format.
-     * Acceptable formats:
-     * -9 digits followed by 'V' or 'v' (eg: 123456789V)
-     * -12-digit number (eg:200512345678)
-     * @param nic the input NIC
-     * @return true if valid, false otherwise
-     */
-    private boolean isValidNIC(String nic){
-        return nic.matches("\\d{9}[Vv]") || nic.matches("\\d{12}");
     }
 
 
@@ -192,7 +166,7 @@ public class Operator {
         } else {
             System.out.println("--list of busses--");
             for(Bus bus: Bus.getBusList()){
-                System.out.println(bus.getVehicleNo());
+                System.out.println(bus);
             }
         }
     }
@@ -203,19 +177,60 @@ public class Operator {
      * creates a new bus object and adds it into bus list.
      */
     public void addBus() {
-        System.out.println("enter vehicle number in format [AA-####]: ");
-        String vehicleNo = scan.next();
-        // ADDING BUS TO THE LIST OF BUSES
-        if (isValidVehicleNumber(vehicleNo)){
-            new Bus(vehicleNo);
-            Logger.log("user- "+ this.username +" added bus "+vehicleNo);
-            jsonHandler.saveBusData();
-            System.out.println("vehicle added successfully");
-        } else {
-            System.out.println("vehicle number not valid");
+        // Vehicle number input loop
+        String vehicleNo = "";
+        while (true) {
+            System.out.println("Enter vehicle number in format [AA-####]: ");
+            vehicleNo = scan.next();
+
+            if (isValidVehicleNumber(vehicleNo)) {
+                break;  // Exit loop when vehicle number is valid
+            } else {
+                System.out.println("Error: Invalid vehicle number. Please try again.");
+            }
         }
 
+        // Bus model input (this does not require validation, just collect input)
+        System.out.println("Enter bus model: ");
+        String model = scan.next();
+
+        // Seat capacity input loop
+        String capacityInput = "";
+        while (true) {
+            System.out.println("Enter seating capacity [1-50]: ");
+            capacityInput = scan.next();  // Read as String for validation
+
+            if (isValidSeatCapacity(capacityInput)) {
+                break;  // Exit loop when seating capacity is valid
+            } else {
+                System.out.println("Error: Invalid seating capacity. Please try again.");
+            }
+        }
+        int capacity = Integer.parseInt(capacityInput); // Convert the valid input to integer
+
+        // Route code input loop
+        String routeCode = "";
+        while (true) {
+            System.out.println("Enter route code: ");
+            routeCode = scan.next();
+
+            // Retrieve the route from the Route class
+            Route route = Route.getRouteByCode(routeCode);
+            if (route != null) {
+                break;  // Exit loop when route is valid
+            } else {
+                System.out.println("Invalid route code! Please enter a valid route.");
+            }
+        }
+
+        // After all inputs are validated, create the bus
+        Bus bus = new Bus(vehicleNo, model, capacity, Route.getRouteByCode(routeCode));
+        Logger.log("User " + this.username + " added bus " + vehicleNo);
+        jsonHandler.saveBusData();
+        System.out.println("Vehicle added successfully.");
     }
+
+
 
     /**
      * changes the last service date of a bus.
@@ -290,6 +305,16 @@ public class Operator {
         }
         return isValid;
     }
+    private boolean isValidSeatCapacity(String input) {
+        try {
+            int capacity = Integer.parseInt(input);  // Try to parse the input as an integer
+            return capacity >= 1 && capacity <= 50;  // Check if it's within the valid range
+        } catch (NumberFormatException e) {
+            // If the input can't be parsed to an integer
+            return false;
+        }
+    }
+
 
     public boolean isValidUsername(String username) {
         return true;
