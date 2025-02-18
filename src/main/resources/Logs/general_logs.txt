@@ -44,3 +44,83 @@ DOB  : 2001-8-7
 ---------
 
 
+2025-02-12T15:16:24.001453100 admin created EMP;
+Name : virul eksan
+EmpID: EM-21
+NIC  : 200504704068
+DOB  : 2005-02-16
+---------
+
+
+2025-02-12T18:07:16.744669400 admin created EMP;
+Name : 5 ds
+EmpID: EM-31
+NIC  : 0
+DOB  : 0sdf
+---------
+
+
+2025-02-12T18:27:30.660662300 admin created EMP;
+Name : 645 654
+EmpID: EM-31
+NIC  : +65
+DOB  : 654
+---------
+
+
+2025-02-12T18:32:35.939747900 admin created EMP;
+Name : 53 654
+EmpID: EM-41
+NIC  : 654
+DOB  : 654
+---------
+
+
+2025-02-15T06:24:51.217033700 admin created EMP;
+Name : somapala piris
+EmpID: EM-51
+NIC  : 200504704058
+DOB  : saptamber
+---------
+
+
+2025-02-15T06:54:43.335242 admin created EMP;
+Name : Kag nooby
+EmpID: EM-61
+NIC  : 200504704068
+DOB  : 2005-02-16
+---------
+
+
+2025-02-15T20:43:31.850141800 admin created EMP;
+Name : Sanku Thevarapperuma
+EmpID: EM-71
+NIC  : 123456789123
+DOB  : 2005-02-16
+---------
+
+
+2025-02-15T20:49:07.014898 admin created EMP;
+Name : drgsssssss dsfgdfsgdf
+EmpID: EM-81
+NIC  : 123456789123
+DOB  : 1111-11-11
+---------
+
+
+2025-02-18T10:11:00.425565700 admin created EMP;
+Name : kamal nuvan
+EmpID: EM-91
+NIC  : 123456789V
+DOB  : 2222-12-22
+---------
+
+
+2025-02-18T10:15:19.029712300 admin created EMP;
+Name : virul eksan
+EmpID: EM-101
+NIC  : 123456789v
+DOB  : 2022-10-10
+---------
+
+
