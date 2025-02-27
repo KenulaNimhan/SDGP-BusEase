@@ -17,3 +17,14 @@
 2025-02-18T20:42:54.644377100 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
 2025-02-18T20:43:12.386170100 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])
+2025-02-23T14:08:21.114842200 Unexpected end-of-input within/between Object entries
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
+2025-02-23T14:08:36.281481800 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])
+2025-02-23T14:09:14.047370900 Unexpected end-of-input within/between Object entries
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
+2025-02-23T14:17:28.249367200 Unexpected end-of-input within/between Object entries
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
+2025-02-23T14:17:39.432982400 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])
+2025-02-23T14:42:20.035838600 Unexpected end-of-input within/between Object entries
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
+2025-02-23T14:42:31.859154300 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])

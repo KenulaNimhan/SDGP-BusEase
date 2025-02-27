@@ -182,3 +182,30 @@ Start Time: 12:12
 End Time: 13:13
 ---------------------------
 
+2025-02-23T14:08:36.254165400 User admin added bus VehicleNo: AS-1334
+Model: asd
+Capacity: 13
+Route: Route Code: 138
+Destinations: [Maharagama, Vijerama, Nugegoda, Kirlupana, Thibirigasyaya]
+Start Time: 12:12
+End Time: 13:13
+---------------------------
+
+2025-02-23T14:17:39.404327400 User admin added bus VehicleNo: AS-1343
+Model: adfs
+Capacity: 13
+Route: Route Code: 138
+Destinations: [Maharagama, Vijerama, Nugegoda, Kirlupana, Thibirigasyaya]
+Start Time: 12:12
+End Time: 13:13
+---------------------------
+
+2025-02-23T14:42:31.836161900 User admin added bus VehicleNo: AS-1334
+Model: afgd
+Capacity: 12
+Route: Route Code: 138
+Destinations: [Maharagama, Vijerama, Nugegoda, Kirlupana, Thibirigasyaya]
+Start Time: 12:12
+End Time: 13:13
+---------------------------
+
