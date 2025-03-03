@@ -25,6 +25,10 @@ public class Route {
         this.endTime = endTime;
     }
 
+    public String getRouteCode() {
+        return routeCode;
+    }
+
     // Method to retrieve a Route by its code
     public static Route getRouteByCode(String routeCode) {
         return routeMap.get(routeCode);

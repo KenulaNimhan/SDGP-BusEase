@@ -1,3 +1,4 @@
+import core.util.DatabaseConnector;
 import services.organization.*;
 import java.util.*;
 import core.util.jsonHandler;
@@ -5,8 +6,7 @@ import core.util.jsonHandler;
 public class SystemManager {
     // INITIALIZING SCANNER
     private static final Scanner scan = new Scanner(System.in);
-    // ASSIGNING THE BUS LIST TO A VARIABLE FOR EASE OF REFERENCE
-    private static final List<Bus> busList = Bus.getBusList();
+    // INITIALIZING VARIABLE
     private static int userChoice;
 
     public static void main(String[] args){
@@ -74,9 +74,6 @@ public class SystemManager {
      * @param opsUser the operator who is accessing in that instance.
      */
     private static void organizationMenu(Operator opsUser) {
-        // LOADING ESSENTIAL FILES
-        jsonHandler.loadBusData();
-        jsonHandler.loadEmployeeData();
         // INITIALIZING VARIABLES
         boolean resume = true;
 
