@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   scrollView: {
-    paddingBottom: 20, // To ensure there's space at the bottom
+    paddingBottom: 20, // there's space in the bottom
   },
 });
