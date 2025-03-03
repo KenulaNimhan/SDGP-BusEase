@@ -10,11 +10,13 @@ import java.util.Scanner;
 import core.util.DatabaseConnector;
 import core.util.Logger;
 import core.util.jsonHandler;
+import org.springframework.stereotype.Service;
 import services.organization.personell.Employee;
 
 import java.util.List;
 import java.time.LocalDate;
 
+@Service
 public class Operator {
     // INITIALIZING SCANNER
     private static final Scanner scan = new Scanner(System.in);
@@ -115,6 +117,7 @@ public class Operator {
                 System.out.println("invalid NIC");
             }
         }
+
 
         Employee emp = new Employee(fName, lName, NIC, dateOfBirth);
         Logger.log(this.username+" created EMP;\n"+emp+"\n");
