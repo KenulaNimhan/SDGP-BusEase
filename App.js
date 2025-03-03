@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
     setTimeout(() => {
       setEmployees(employeesData);
       setLoading(false);
-    }, 5000); // Simulate a 1-second delay
+    }, 1000); // Simulate a 1-second delay
   }, []);
 
   const handleSubmit = (employeeData) => {
@@ -64,11 +64,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
-    paddingHorizontal: 20,
+    paddingTop: 40,
+    paddingHorizontal: 40,
     backgroundColor: '#f5f5f5',
   },
   scrollView: {
-    paddingBottom: 20, // To ensure there's space at the bottom
+    paddingBottom: 40, // To ensure there's space at the bottom
   },
 });
