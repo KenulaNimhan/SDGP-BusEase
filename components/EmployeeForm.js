@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   searchButtonText: {
-    color: '#fff',
+    color: '#FFA500',
     marginLeft: 10,
     fontSize: 16,
   },
