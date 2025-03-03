@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
     setTimeout(() => {
       setEmployees(employeesData);
       setLoading(false);
-    }, 1000); // Simulate a 1-second delay
+    }, 5000); // Simulate a 1-second delay
   }, []);
 
   const handleSubmit = (employeeData) => {
