@@ -40,6 +40,17 @@
     "nic": "654987399V",
     "role": "conductor",
     "active": true
+  },
+
+  {
+    "id": 5,
+    "firstName": "kamal",
+    "lastName": "tennakoon",
+    "username": "duni",
+    "password": "1234wesq1",
+    "nic": "654987399V",
+    "role": "conductor",
+    "active": true
   }
   
 ]
