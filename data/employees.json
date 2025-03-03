@@ -61,7 +61,7 @@
     "password": "hihello26657",
     "nic": "998888765V",
     "role": "conductor",
-    "active": false
+    "active": true
   }
   
 ]
