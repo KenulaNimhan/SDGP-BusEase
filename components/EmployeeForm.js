@@ -103,7 +103,7 @@ const EmployeeForm = ({ onSubmit, onSearch }) => {
           <Picker.Item label="Driver" value="driver" />
           <Picker.Item label="Conductor" value="conductor" />
         </Picker>
-        <Button title="Submit" onPress={handleSubmit} color="#6200ee" />
+        <Button title="Submit" onPress={handleSubmit} color="#CC5500" />
         <TouchableOpacity style={styles.searchButton} onPress={onSearch}>
           <Icon name="search" size={20} color="#fff" />
           <Text style={styles.searchButtonText}>Search Employees</Text>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   searchButtonText: {
-    color: '#FFA500',
+    color: 'white',
     marginLeft: 10,
     fontSize: 16,
   },

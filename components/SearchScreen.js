@@ -28,7 +28,7 @@ const SearchScreen = () => {
         value={query}
         onChangeText={setQuery}
       />
-      <Button title="Search" onPress={handleSearch} color="#6200ee" />
+      <Button title="Search" onPress={handleSearch} color="#CC5500" />
       <ScrollView style={styles.tableContainer}>
         <View style={styles.table}>
           <View style={styles.headerRow}>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 15,
-    backgroundColor: '#6200ee',
+    backgroundColor: '#CC5500',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
