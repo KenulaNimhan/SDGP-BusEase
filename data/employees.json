@@ -8,16 +8,16 @@
     "password": "nadungodi223",
     "nic": "098765432V",
     "role": "conductor",
-    "active": true
+    "active": false
   },
   {
     "id": 2,
-    "firstName": "Nipun",
-    "lastName": "Do",
-    "username": "nipundo",
-    "password": "password456",
+    "firstName": "sapumal",
+    "lastName": "tennakoon",
+    "username": "sapten",
+    "password": "helloworld456",
     "nic": "987654321V",
-    "role": "conductor",
+    "role": "driver",
     "active": false
   },
   {
