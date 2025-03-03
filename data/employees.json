@@ -19,5 +19,27 @@
     "nic": "987654321V",
     "role": "conductor",
     "active": false
+  },
+  {
+    "id": 3,
+    "firstName": "Thanuga",
+    "lastName": "rodrigo",
+    "username": "thanuga",
+    "password": "password456",
+    "nic": "654987321V",
+    "role": "conductor",
+    "active": false
+  },
+
+  {
+    "id": 4,
+    "firstName": "dunimal",
+    "lastName": "tennakoon",
+    "username": "duni",
+    "password": "1234wesq1",
+    "nic": "654987399V",
+    "role": "conductor",
+    "active": true
   }
+  
 ]
