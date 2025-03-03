@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: 'fff',
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -130,12 +130,12 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: '#6200ee',
+    color: '#FFA500',
     marginBottom: 5,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#FFA500',
     padding: 10,
     marginBottom: 15,
     borderRadius: 5,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#6200ee',
+    backgroundColor: '#CC5500',
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
