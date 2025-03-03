@@ -24,7 +24,7 @@ const SearchScreen = () => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Search by name or nic"
+        placeholder="search by nic or name"
         value={query}
         onChangeText={setQuery}
       />
