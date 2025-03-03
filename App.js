@@ -64,11 +64,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
-    paddingHorizontal: 40,
+    paddingTop: 20,
+    paddingHorizontal: 20,
     backgroundColor: '#f5f5f5',
   },
   scrollView: {
-    paddingBottom: 40, // To ensure there's space at the bottom
+    paddingBottom: 20, // To ensure there's space at the bottom
   },
 });

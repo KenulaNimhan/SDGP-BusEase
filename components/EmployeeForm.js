@@ -71,7 +71,7 @@ const EmployeeForm = ({ onSubmit, onSearch }) => {
         />
         <Text style={styles.label}>Last Name</Text>
         <TextInput
-          placeholder="Enter Last Name"
+          placeholder="Enter Last name"
           value={lastName}
           onChangeText={setLastName}
           style={styles.input}
