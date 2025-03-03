@@ -51,6 +51,17 @@
     "nic": "789237981V",
     "role": "driver",
     "active": false
+  },
+
+  {
+    "id": 6,
+    "firstName": "kamal",
+    "lastName": "perera",
+    "username": "kamalp",
+    "password": "alieninvasion2",
+    "nic": "789237981V",
+    "role": "driver",
+    "active": false
   }
   
 ]
