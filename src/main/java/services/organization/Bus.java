@@ -87,6 +87,20 @@ public class Bus {
     public static void setBusList(ArrayList<Bus> buses) {
         busList = buses;
     }
+
+
+    @Override
+public String toString() {
+    return String.format("""
+            VehicleNo: %s
+            Model: %s
+            Capacity: %d
+            Route: %s
+            ---------------------------
+            """, this.vehicleNo, this.model, this.capacity, this.route
+    );
+
+    }
 }
 
 
