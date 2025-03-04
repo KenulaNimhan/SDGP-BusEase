@@ -6,6 +6,8 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import core.util.Logger;
 import core.util.jsonHandler;
 import services.organization.personell.Employee;
@@ -155,6 +157,11 @@ public class Operator {
     private boolean isValidNIC(String nic){
         return nic.matches("\\d{9}[Vv]") || nic.matches("\\d{12}");
     }
+
+    /**
+     * API for Employee Objetc
+     */
+
 
 
     /**
