@@ -182,3 +182,36 @@ Start Time: 12:12
 End Time: 13:13
 ---------------------------
 
+2025-03-03T20:19:15.861323900 admin created EMP;
+Name : Kenula Nimhan
+EmpID: EM-7
+NIC  : 200213800690
+DOB  : 2002-05-17
+---------
+
+
+2025-03-03T20:21:25.054964300 admin created EMP;
+Name : Kenula Nimhan
+EmpID: EM-8
+NIC  : 200213800690
+DOB  : 2002-05-17
+---------
+
+
+2025-03-03T20:23:15.791409500 admin created EMP;
+Name : Kenula Nimhan
+EmpID: EM-9
+NIC  : 200213800690
+DOB  : 2002-05-17
+---------
+
+
+2025-03-03T21:03:10.642863100 User admin added bus VehicleNo: NI-7584
+Model: Tata
+Capacity: 45
+Route: Route Code: 138
+Destinations: [Maharagama, Vijerama, Nugegoda, Kirlupana, Thibirigasyaya]
+Start Time: 12:12
+End Time: 13:13
+---------------------------
+

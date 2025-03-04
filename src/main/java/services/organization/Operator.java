@@ -7,17 +7,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import core.util.DatabaseConnector;
 import core.util.Logger;
 import core.util.jsonHandler;
+import org.springframework.stereotype.Service;
 import services.organization.personell.Employee;
 
 import java.util.List;
 import java.time.LocalDate;
 
+@Service
 public class Operator {
     // INITIALIZING SCANNER
     private static final Scanner scan = new Scanner(System.in);
+    // INITIALIZING DATABASE CONNECTOR
+    private static final DatabaseConnector dbConnect = new DatabaseConnector();
 
     // OPERATOR ATTRIBUTES
     private String username;
@@ -114,9 +118,11 @@ public class Operator {
             }
         }
 
+
         Employee emp = new Employee(fName, lName, NIC, dateOfBirth);
         Logger.log(this.username+" created EMP;\n"+emp+"\n");
         jsonHandler.saveEmployeeData();
+        dbConnect.addEmployeeToDB(emp);
         System.out.println("new employee created successfully");
 
     }
@@ -158,39 +164,36 @@ public class Operator {
         return nic.matches("\\d{9}[Vv]") || nic.matches("\\d{12}");
     }
 
-    /**
-     * API for Employee Objetc
-     */
-
-
 
     /**
      * views the current list of employees
      */
     public void viewEmployees() {
-        if(Employee.getEmployeeList().isEmpty()){
-            System.out.println("employee list is empty");
-        } else {
-            System.out.println("--list of employees--");
-            System.out.println(" ");
-            for(Employee emp: Employee.getEmployeeList()){
-                System.out.println(emp);
-            }
-        }
+//        if(Employee.getEmployeeList().isEmpty()){
+//            System.out.println("employee list is empty");
+//        } else {
+//            System.out.println("--list of employees--");
+//            System.out.println(" ");
+//            for(Employee emp: Employee.getEmployeeList()){
+//                System.out.println(emp);
+//            }
+//        }
+        dbConnect.getEmpDataFromDB();
     }
 
     /**
      * shows the list of busses in the system.
      */
     public void viewBusList() {
-        if(Bus.getBusList().isEmpty()){
-            System.out.println("bus list is empty");
-        } else {
-            System.out.println("--list of busses--");
-            for(Bus bus: Bus.getBusList()){
-                System.out.println(bus);
-            }
-        }
+//        if(Bus.getBusList().isEmpty()){
+//            System.out.println("bus list is empty");
+//        } else {
+//            System.out.println("--list of busses--");
+//            for(Bus bus: Bus.getBusList()){
+//                System.out.println(bus);
+//            }
+//        }
+        dbConnect.getBusDataFromDB();
     }
 
     public void viewBusList(String busRoute) {}
@@ -249,6 +252,7 @@ public class Operator {
         Bus bus = new Bus(vehicleNo, model, capacity, Route.getRouteByCode(routeCode));
         Logger.log("User " + this.username + " added bus " + bus);
         jsonHandler.saveBusData();
+        dbConnect.addBusToDB(bus);
         System.out.println("Vehicle added successfully.");
     }
 
