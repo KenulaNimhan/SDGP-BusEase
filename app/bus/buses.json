@@ -1,0 +1,23 @@
+[
+    {
+      "vehicleNumber": "ABC-1234",
+      "busModel": "Toyota Coaster",
+      "seats": 45,
+      "route": "Colombo to Kandy",
+      "driverName": "John Doe",
+      "contact": "0711234567",
+      "isActive": true,
+      "lastServiceDate": "2024-01-15"
+    },
+    {
+      "vehicleNumber": "XYZ-5678",
+      "busModel": "Nissan Civilian",
+      "seats": 30,
+      "route": "Galle to Colombo",
+      "driverName": "Jane Smith",
+      "contact": "0779876543",
+      "isActive": false,
+      "lastServiceDate": "2023-12-20"
+    }
+  ]
+  
