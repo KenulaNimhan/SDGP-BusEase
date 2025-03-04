@@ -35,6 +35,12 @@ public class Route {
         return routeMap.get(routeCode);
     }
 
-
+    @Override
+    public String toString() {
+        return "Route Code: " + routeCode + "\n" +
+                "Destinations: " + destinations + "\n" +
+                "Start Time: " + startTime + "\n" +
+                "End Time: " + endTime;
+    }
 }
 
