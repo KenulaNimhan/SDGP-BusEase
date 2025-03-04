@@ -15,6 +15,7 @@ public class Route {
     // Static block to initialize predefined routes
     static {
         routeMap.put("138", new Route("138", Arrays.asList("Maharagama", "Vijerama", "Nugegoda", "Kirlupana", "Thibirigasyaya"), LocalTime.of(12, 12), LocalTime.of(13, 13)));
+        routeMap.put("101", new Route("101", Arrays.asList("Moratuwa", "Rathmalana", "Dehiwala", "Wellawatte", "Bambalpitiya", "Kolpitiya", "Pettah"), LocalTime.of(12, 12), LocalTime.of(13, 13)));
     }
 
     // Constructor
@@ -34,12 +35,6 @@ public class Route {
         return routeMap.get(routeCode);
     }
 
-    @Override
-    public String toString() {
-        return "Route Code: " + routeCode + "\n" +
-                "Destinations: " + destinations + "\n" +
-                "Start Time: " + startTime + "\n" +
-                "End Time: " + endTime;
-    }
+
 }
 
