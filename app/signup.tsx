@@ -91,4 +91,74 @@ export default function SignupScreen() {
     }
   };
 
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.formContainer}>
+          <Text style={styles.title}>BusEase</Text>
+          <Text style={styles.subtitle}>Create a new account</Text>
+
+          <TextInput
+            style={[styles.input, errors.name ? styles.inputError : null]}
+            placeholder="Full Name"
+            value={name}
+            onChangeText={setName}
+          />
+          {errors.name ? <Text style={styles.errorText}>{errors.name}</Text> : null}
+
+          <TextInput
+            style={[styles.input, errors.email ? styles.inputError : null]}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+          {errors.email ? <Text style={styles.errorText}>{errors.email}</Text> : null}
+
+          <TextInput
+            style={[styles.input, errors.password ? styles.inputError : null]}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+          {errors.password ? <Text style={styles.errorText}>{errors.password}</Text> : null}
+
+          <TextInput
+            style={[styles.input, errors.confirmPassword ? styles.inputError : null]}
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            secureTextEntry
+          />
+          {errors.confirmPassword ? <Text style={styles.errorText}>{errors.confirmPassword}</Text> : null}
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={handleSignup}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <ActivityIndicator color="#fff" />
+            ) : (
+              <Text style={styles.buttonText}>Sign Up</Text>
+            )}
+          </TouchableOpacity>
+
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Already have an account? </Text>
+            <Link href="/login" asChild>
+              <TouchableOpacity>
+                <Text style={styles.link}>Login</Text>
+              </TouchableOpacity>
+            </Link>
+          </View>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
+  );
 }
