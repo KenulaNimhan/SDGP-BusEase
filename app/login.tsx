@@ -149,5 +149,55 @@ export default function LoginScreen() {
     }
   };
 
-  return();
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.formContainer}>
+        <Text style={styles.title}>BusEase</Text>
+        <Text style={styles.subtitle}>Login to your account</Text>
+
+        <TextInput
+          style={[styles.input, errors.email ? styles.inputError : null]}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+        {errors.email ? <Text style={styles.errorText}>{errors.email}</Text> : null}
+
+        <TextInput
+          style={[styles.input, errors.password ? styles.inputError : null]}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        {errors.password ? <Text style={styles.errorText}>{errors.password}</Text> : null}
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleLogin}
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <ActivityIndicator color="#fff" />
+          ) : (
+            <Text style={styles.buttonText}>Login</Text>
+          )}
+        </TouchableOpacity>
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Don't have an account? </Text>
+          <Link href="/signup" asChild>
+            <TouchableOpacity>
+              <Text style={styles.link}>Sign up</Text>
+            </TouchableOpacity>
+          </Link>
+        </View>
+      </View>
+    </KeyboardAvoidingView>
+  );
 }
