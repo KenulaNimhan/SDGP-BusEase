@@ -10,14 +10,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
-<<<<<<< Updated upstream
     "@expo/metro-runtime": "~4.0.1",
     "@react-native-picker/picker": "^2.11.0",
-    "@react-navigation/native": "^7.0.15",
     "@react-navigation/stack": "^7.1.2",
-    "axios": "^1.7.9",
-    "expo": "~52.0.33",
-=======
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
@@ -30,7 +25,6 @@
     "expo-linking": "~7.0.5",
     "expo-router": "~4.0.17",
     "expo-splash-screen": "~0.29.22",
->>>>>>> Stashed changes
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
