@@ -47,7 +47,6 @@ yarn-error.log
 
 # React Native
 .expo/
-.vscode/
 .idea/
 android/.gradle/
 android/app/build/
