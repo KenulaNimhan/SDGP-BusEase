@@ -16,18 +16,35 @@ import com.google.maps.model.GeolocationResult;
 public class BusLocationServices {
     private static final String Api_KEY = "YOUR_GOOGLE_MAPS_API_KEY";
 
-    public static void main(String[] args){
-        GeoApiContext context = new GeoApiContext.Builder() //Send requests to the Google Maps API
+    private static GeoApiContext getGeoContext(){
+        return new GeoApiContext.Builder() //Send requests to the Google Maps API
                 .apiKey(Api_KEY)
                 .build();
+    }
 
+    public static GeolocationResult getBusLocation(){
         try {
             GeolocationPayload payload = new GeolocationPayload();
-            GeolocationResult result = GeolocationApi.geolocate(context, payload).await();
+            return GeolocationApi.geolocate(getGeoContext(), payload).await();
 
-            System.out.println("Bus Location Lat "+ result.location.lat + "Lng "+ result.location.lng);
         }catch (Exception e){
             e.printStackTrace();
+            return null;
+        }
+
+    }
+
+}
+
+/*
+public class TestBusLocation {
+    public static void main(String[] args) {
+        GeolocationResult result = BusLocationService.getBusLocation();
+        if (result != null) {
+            System.out.println("Bus Location: Lat " + result.location.lat + ", Lng " + result.location.lng);
+        } else {
+            System.out.println("Failed to fetch bus location.");
         }
     }
 }
+ */
