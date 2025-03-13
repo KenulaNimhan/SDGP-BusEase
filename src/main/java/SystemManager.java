@@ -1,7 +1,6 @@
-import core.util.DatabaseConnector;
-import services.organization.*;
 import java.util.*;
-import core.util.jsonHandler;
+
+import organization.models.Operator;
 
 public class SystemManager {
     // INITIALIZING SCANNER

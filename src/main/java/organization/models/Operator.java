@@ -1,8 +1,6 @@
-package services.organization;
+package organization.models;
 
-import java.sql.Date;
 import java.time.DateTimeException;
-import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,12 +9,10 @@ import core.util.DatabaseConnector;
 import core.util.Logger;
 import core.util.jsonHandler;
 import org.springframework.stereotype.Service;
-import services.organization.personell.Employee;
 
 import java.util.List;
 import java.time.LocalDate;
 
-@Service
 public class Operator {
     // INITIALIZING SCANNER
     private static final Scanner scan = new Scanner(System.in);
