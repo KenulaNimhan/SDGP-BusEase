@@ -3,7 +3,9 @@ package organization.models;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Employee {
+
     // INITIALIZING INSTANCE VARIABLES
     private String employeeID;
     private String firstName;
