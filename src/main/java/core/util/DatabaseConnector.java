@@ -1,7 +1,7 @@
 package core.util;
 
-import organization.models.Employee;
-import organization.models.Bus;
+import core.organization.models.Employee;
+import core.organization.models.Bus;
 
 import java.sql.*;
 

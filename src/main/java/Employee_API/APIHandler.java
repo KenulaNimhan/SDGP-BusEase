@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import core.util.jsonHandler;
 import org.springframework.web.bind.annotation.*;
-import services.organization.personell.Employee;
+import core.organization.models.Employee;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("employee")
-public class ApiHaddler {
+public class APIHandler {
 
     @GetMapping("{employeeAPI}") // Ensure correct URL mapping
     public Employee getEmployeeDetails(String employeeAPI) throws IOException {

@@ -1,4 +1,4 @@
-package organization.models;
+package core.organization.models;
 
 import java.time.LocalTime;
 import java.util.*;

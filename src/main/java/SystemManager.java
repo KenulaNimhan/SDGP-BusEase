@@ -1,6 +1,6 @@
 import java.util.*;
 
-import organization.models.Operator;
+import core.organization.models.Operator;
 
 public class SystemManager {
     // INITIALIZING SCANNER

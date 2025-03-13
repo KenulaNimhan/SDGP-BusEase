@@ -1,4 +1,4 @@
-package organization.models;
+package core.organization.models;
 
 import java.time.DateTimeException;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +8,6 @@ import java.util.Scanner;
 import core.util.DatabaseConnector;
 import core.util.Logger;
 import core.util.jsonHandler;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.time.LocalDate;

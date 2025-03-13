@@ -1,9 +1,9 @@
 package core.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import organization.models.Bus;
-import organization.models.Employee;
-import organization.models.Operator;
+import core.organization.models.Bus;
+import core.organization.models.Employee;
+import core.organization.models.Operator;
 
 import java.io.File;
 import java.io.IOException;
