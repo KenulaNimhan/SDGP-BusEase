@@ -62,6 +62,17 @@
     "nic": "998888765V",
     "role": "conductor",
     "active": true
+  },
+
+  {
+    "id": 7,
+    "firstName": "medhani",
+    "lastName": "hewa",
+    "username": "hew",
+    "password": "himdddwd33886",
+    "nic": "998888778V",
+    "role": "conductor",
+    "active": true
   }
   
 ]
