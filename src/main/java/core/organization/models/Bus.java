@@ -9,7 +9,7 @@ public class Bus {
     private int capacity;
     private boolean isActive;
     private LocalDate lastServiceDate;
-    private Route route;
+    private String route;
     private String model;
 
     // CONSTRUCTORS
@@ -17,7 +17,12 @@ public class Bus {
     public Bus(String vehicleNo) {
         this.vehicleNo = vehicleNo;
     }
-    public Bus(String vehicleNo, String model, int capacity, Route route) {
+    public Bus(String vehicleNo, String model, String route) {
+        this.vehicleNo = vehicleNo;
+        this.model = model;
+        this.route = route;
+    }
+    public Bus(String vehicleNo, String model, int capacity, String route) {
         this.vehicleNo = vehicleNo;
         this.model = model;
         this.capacity = capacity;
@@ -66,11 +71,11 @@ public class Bus {
         this.lastServiceDate = date;
     }
 
-    public Route getRoute() {
+    public String getRoute() {
         return route;
     }
 
-    public void allocateRoute(Route route) {
+    public void allocateRoute(String route) {
         this.route = route;
     }
 
