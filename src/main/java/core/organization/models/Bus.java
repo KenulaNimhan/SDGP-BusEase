@@ -1,7 +1,5 @@
 package core.organization.models;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.time.LocalDate;
 
 public class Bus {
@@ -9,25 +7,22 @@ public class Bus {
     // INITIALIZING ATTRIBUTES OF A BUS
     private String vehicleNo;
     private int capacity;
-    private boolean isWorking;
+    private boolean isActive;
     private LocalDate lastServiceDate;
     private Route route;
     private String model;
-
-    protected static List<Bus> busList = new ArrayList<>();
 
     // CONSTRUCTORS
     public Bus() {};
     public Bus(String vehicleNo) {
         this.vehicleNo = vehicleNo;
-        busList.add(this);
     }
     public Bus(String vehicleNo, String model, int capacity, Route route) {
         this.vehicleNo = vehicleNo;
         this.model = model;
         this.capacity = capacity;
         this.route = route;
-        busList.add(this);
+        this.isActive = false;
     }
 
     // Getter and Setter Methods
@@ -56,11 +51,11 @@ public class Bus {
     }
 
     public boolean isWorking() {
-        return isWorking;
+        return isActive;
     }
 
     public void setIsWorking(boolean status) {
-        this.isWorking = status;
+        this.isActive = status;
     }
 
     public LocalDate getLastServiceDate() {
@@ -79,26 +74,16 @@ public class Bus {
         this.route = route;
     }
 
-    public static List<Bus> getBusList() {
-        return busList;
-    }
-
-    public static void setBusList(ArrayList<Bus> buses) {
-        busList = buses;
-    }
-
-
     @Override
-public String toString() {
-    return String.format("""
-            VehicleNo: %s
-            Model: %s
-            Capacity: %d
-            Route: %s
-            ---------------------------
-            """, this.vehicleNo, this.model, this.capacity, this.route
-    );
-
+    public String toString() {
+        return String.format("""
+                VehicleNo: %s
+                Model: %s
+                Capacity: %d
+                Route: %s
+                ---------------------------
+                """, this.vehicleNo, this.model, this.capacity, this.route
+        );
     }
 }
 

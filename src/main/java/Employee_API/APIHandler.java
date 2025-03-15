@@ -2,7 +2,6 @@ package Employee_API;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import core.util.jsonHandler;
 import org.springframework.web.bind.annotation.*;
 import core.organization.models.Employee;
 
@@ -40,7 +39,6 @@ public class APIHandler {
                 newEmployee.getDateOfBirth()
         );
 
-        jsonHandler.saveEmployeeData(); // save updated employee list
         return "Employee added successfully with ID: " + emp.getEmployeeID();
 
     }

@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57ff31b-15f4-4bd7-9c03-a45c3821335d" name="Changes" comment="Added toString method">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Employee_API/ApiHaddler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Employee_API/APIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Employee_API/APIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Employee_API/APIHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SystemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SystemManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/AppStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/controllers/BusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/BusControllerSample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/models/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/models/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/models/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/util/jsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/util/jsonHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/controllers/BusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/BusController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/controllers/OperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/models/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/models/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/models/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/organization/services/OperatorServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/services/OperatorServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.AppStarter.executor": "Run",
     "Application.DatabaseConnector.executor": "Run",
     "Application.SystemManager.executor": "Run",
@@ -77,7 +69,14 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="core.AppStarter" />
+      <module name="BusEaseDraft" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SystemManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SystemManager" />
       <module name="BusEaseDraft" />
@@ -85,6 +84,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.SystemManager" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SystemManager" />
