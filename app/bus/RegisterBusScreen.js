@@ -49,4 +49,71 @@ const RegisterBusScreen = ({ navigation }) => {
     }
   };
 
-  
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text style={styles.backButton}>←</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Register Bus</Text>
+      </View>
+
+      <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
+        {/* Registration Form */}
+        <View style={styles.formContainer}>
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Bus Number</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter bus number"
+              value={busNumber}
+              onChangeText={setBusNumber}
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Bus Model</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter bus model"
+              value={busModel}
+              onChangeText={setBusModel}
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Bus Manufacturer</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter manufacturer"
+              value={busManufacturer}
+              onChangeText={setBusManufacturer}
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Seating Capacity</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter seating capacity"
+              value={busCapacity}
+              onChangeText={setBusCapacity}
+              keyboardType="numeric"
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>License Number</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter license number"
+              value={busLicense}
+              onChangeText={setBusLicense}
+            />
+          </View>
+        </View>
+
+        
