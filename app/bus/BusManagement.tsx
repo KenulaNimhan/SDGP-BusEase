@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   dashboardTitle: { 
     fontSize: 18, 
     fontWeight: 'bold', 
-    textAlign: 'center', 
+    textAlifn: 'center', 
     marginBottom: 10 
   },
   
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   
   dashboardText: {  // **Missing Style**
-    fontSize: 14, 
+    fontsize: 16, 
     color: '#fff' 
   },
   
