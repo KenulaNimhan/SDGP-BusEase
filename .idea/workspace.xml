@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f57ff31b-15f4-4bd7-9c03-a45c3821335d" name="Changes" comment="Added toString method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/AppStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/BusController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/BusControllerSample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/RouteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Route.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/services/BusService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/services/OperatorServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/organization/services/RouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Employee_API/ApiHaddler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SystemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SystemManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/util/jsonHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/Controller/BusController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/Route.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/personell/Conductor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/organization/personell/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusLocationServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/passengers/Controller/BusRouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" afterDir="false" />
-    </list>
+    <list default="true" id="f57ff31b-15f4-4bd7-9c03-a45c3821335d" name="Changes" comment="Added toString method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +40,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging backend",
+    "git-widget-placeholder": "backend",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/UNI/L5/SEM2/ALGO/FindMultiples.java",
