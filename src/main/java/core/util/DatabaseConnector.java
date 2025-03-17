@@ -20,34 +20,35 @@ public class DatabaseConnector {
         }
     }
 
-    public void getEmpDataFromDB() {
+    public ArrayList<Employee> getEmpDataFromDB() {
+        // creating result array
+        ArrayList<Employee> employeeList = new ArrayList<>();
+
         try {
             // creating statement
             Statement queryEmpDataStatement = sqlConnection.createStatement();
             ResultSet empDataFromDB = queryEmpDataStatement.executeQuery("SELECT * FROM Employees");
 
-            // checking the availability of data
-            if (!empDataFromDB.isBeforeFirst()) {
-                System.out.println("No employee data found");
-            } else {
-                System.out.println("Employee Data;");
-                while(empDataFromDB.next()) {
-                    System.out.printf("""
-                            ----
-                            Name : %s %s
-                            ID   : %s
-                            NIC  : %s
-                            """,
-                            empDataFromDB.getString("firstName"),
-                            empDataFromDB.getString("lastName"),
-                            empDataFromDB.getString("employeeID"),
-                            empDataFromDB.getString("NIC"));
+            while(empDataFromDB.next()) {
+                Employee emp = new Employee(
+                        empDataFromDB.getString("firstName"),
+                        empDataFromDB.getString("lastName"),
+                        empDataFromDB.getString("NIC")
+                );
+                Date birthDate = empDataFromDB.getDate("DOB");
+                if (birthDate != null) {
+                    emp.setDateOfBirth(empDataFromDB.getDate("DOB").toString());
                 }
+                emp.setEmployeeID(empDataFromDB.getString("employeeID"));
+                emp.setRole(empDataFromDB.getString("type"));
+                employeeList.add(emp);
             }
+            return employeeList;
 
         } catch (SQLException e) {
             System.out.println("Database error occurred.");
             Logger.log(e);
+            return employeeList;
         }
     }
     public ArrayList<Bus> getBusDataFromDB() {

@@ -1,22 +1,22 @@
-2025-01-27T17:26:42.668324600 Cannot construct instance of `services.organization.Operator` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+2025-01-27T17:26:42.668324600 Cannot construct instance of `models.organization.Operator` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 2, column: 3]
-2025-01-27T17:26:58.716333700 Cannot construct instance of `services.organization.Operator` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+2025-01-27T17:26:58.716333700 Cannot construct instance of `models.organization.Operator` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 2, column: 3]
-2025-01-28T23:22:27.473887900 Cannot construct instance of `services.organization.Bus` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+2025-01-28T23:22:27.473887900 Cannot construct instance of `models.organization.Bus` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 3] (through reference chain: java.lang.Object[][0])
 2025-01-31T15:29:37.308360800 src\main\resources\employeeData.json (The system cannot find the file specified)
 2025-01-31T15:32:12.632468100 src\main\resources\employeeData.json (The system cannot find the file specified)
-2025-01-31T15:32:52.422758900 Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: java.util.ArrayList[0]->services.organization.personell.Employee["dateOfBirth"])
+2025-01-31T15:32:52.422758900 Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: java.util.ArrayList[0]->models.organization.Employee["dateOfBirth"])
 2025-01-31T15:35:03.345242300 Unexpected end-of-input within/between Object entries
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 76] (through reference chain: java.lang.Object[][0])
-2025-02-18T20:34:35.699984600 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[2]->services.organization.Bus["route"])
-2025-02-18T20:35:54.073257300 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
-2025-02-18T20:38:07.590142900 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
-2025-02-18T20:42:54.644377100 Unrecognized field "working" (class services.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->services.organization.Bus["working"])
-2025-02-18T20:43:12.386170100 No serializer found for class services.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->services.organization.Bus["route"])
+2025-02-18T20:34:35.699984600 No serializer found for class models.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[2]->models.organization.Bus["route"])
+2025-02-18T20:35:54.073257300 Unrecognized field "working" (class models.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->models.organization.Bus["working"])
+2025-02-18T20:38:07.590142900 Unrecognized field "working" (class models.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->models.organization.Bus["working"])
+2025-02-18T20:42:54.644377100 Unrecognized field "working" (class models.organization.Bus), not marked as ignorable (6 known properties: "isWorking", "route", "capacity", "vehicleNo", "model", "lastServiceDate"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 102] (through reference chain: java.lang.Object[][0]->models.organization.Bus["working"])
+2025-02-18T20:43:12.386170100 No serializer found for class models.organization.Route and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->models.organization.Bus["route"])
 2025-03-03T20:18:49.767726300 Unexpected end-of-input within/between Object entries
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
 2025-03-03T20:19:15.924990200 Parameter index out of range (2 > number of parameters, which is 1).
@@ -26,5 +26,15 @@
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
 2025-03-03T21:02:54.949946300 Unexpected end-of-input within/between Object entries
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
-2025-03-04T00:11:54.789375700 Cannot construct instance of `services.organization.Route` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 71] (through reference chain: java.lang.Object[][0]->services.organization.Bus["route"])
+2025-03-04T00:11:54.789375700 Cannot construct instance of `models.organization.Route` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 71] (through reference chain: java.lang.Object[][0]->models.organization.Bus["route"])
+2025-03-14T21:52:19.513362200 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:53:55.257760100 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:55:48.151785700 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:56:23.973887800 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:56:39.032648100 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:56:54.578813400 Duplicate entry '138' for key 'PRIMARY'
+2025-03-14T21:57:28.288821300 Duplicate entry '138' for key 'PRIMARY'
+2025-03-15T13:30:50.779224600 Column 'route' not found.
+2025-03-17T15:22:44.686122100 Column 'firsName' not found.
+2025-03-17T15:25:14.619663700 Column 'firsName' not found.

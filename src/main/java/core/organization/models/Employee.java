@@ -18,6 +18,11 @@ public class Employee {
     private static List<Employee> employeeList = new ArrayList<>();
 
     public Employee(){};
+    public Employee(String fName, String lName, String NIC) {
+        this.firstName = fName;
+        this.lastName = lName;
+        this.NIC = NIC;
+    }
     public Employee(String fName, String lName, String NIC, String dateOfBirth) {
         this.firstName = fName;
         this.lastName  = lName;
@@ -43,6 +48,9 @@ public class Employee {
     }
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+    public String getRole() {
+        return role;
     }
 
     // GETTER METHODS FOR STATIC VARIABLES
@@ -86,8 +94,10 @@ public class Employee {
                 EmpID: %s
                 NIC  : %s
                 DOB  : %s
+                Role : %s
                 ---------
-                """, this.firstName, this.lastName, this.employeeID, this.NIC, this.dateOfBirth);
+                """, this.firstName, this.lastName, this.employeeID, this.NIC, this.dateOfBirth,
+                this.role);
     }
 
 }
