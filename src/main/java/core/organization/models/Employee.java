@@ -1,8 +1,7 @@
-package services.organization.personell;
+package core.organization.models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.time.*;
 
 
 public class Employee {
@@ -13,6 +12,7 @@ public class Employee {
     private String lastName;
     private String NIC;
     private String dateOfBirth;
+    private String role;
 
     // INITIALIZING STATIC VARIABLES
     private static List<Employee> employeeList = new ArrayList<>();
@@ -69,6 +69,9 @@ public class Employee {
     }
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+    public void setRole(String role) {
+        this.role = role;
     }
 
     // SETTER METHODS FOR STATIC VARIABLES

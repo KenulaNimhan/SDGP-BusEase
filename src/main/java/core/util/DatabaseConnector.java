@@ -1,7 +1,9 @@
 package core.util;
 
-import services.organization.personell.Employee;
-import services.organization.Bus;
+import core.organization.models.Employee;
+import core.organization.models.Bus;
+import core.organization.models.Route;
+import java.util.ArrayList;
 
 import java.sql.*;
 
@@ -48,35 +50,56 @@ public class DatabaseConnector {
             Logger.log(e);
         }
     }
-    public void getBusDataFromDB() {
+    public ArrayList<Bus> getBusDataFromDB() {
+        //creating result array
+        ArrayList<Bus> existingBuses = new ArrayList<>();
+
         try {
             // creating statement
-            Statement queryEmpDataStatement = sqlConnection.createStatement();
-            ResultSet busDataFromDB = queryEmpDataStatement.executeQuery("SELECT * FROM Buses");
+            Statement queryBusDataStatement = sqlConnection.createStatement();
+            ResultSet busDataFromDB = queryBusDataStatement.executeQuery("SELECT * FROM Buses");
 
-            // checking the availability of data
-            if (!busDataFromDB.isBeforeFirst()) {
-                System.out.println("No bus data found");
-            } else {
-                System.out.println("Bus Data;");
-                while(busDataFromDB.next()) {
-                    System.out.printf("""
-                            ----
-                            Vehicle No : %s
-                            Model      : %s
-                            Capacity   : %d
-                            Route Code : %s
-                            """,
-                            busDataFromDB.getString("vehicleNo"),
-                            busDataFromDB.getString("model"),
-                            busDataFromDB.getInt("capacity"),
-                            busDataFromDB.getString("routeCode"));
-                }
+            while(busDataFromDB.next()) {
+                Bus bus = new Bus(
+                        busDataFromDB.getString("vehicleNo"),
+                        busDataFromDB.getString("model"),
+                        busDataFromDB.getInt("capacity"),
+                        busDataFromDB.getString("routeCode")
+                );
+                existingBuses.add(bus);
             }
+            return existingBuses;
 
         } catch (SQLException e) {
             System.out.println("Database error occurred.");
             Logger.log(e);
+            return existingBuses;
+        }
+    }
+
+    public ArrayList<Route> getRouteDataFromDB() {
+        //creating result array
+        ArrayList<Route> existingRoutes = new ArrayList<>();
+
+        try {
+            // creating statement
+            Statement queryRouteDataStatement = sqlConnection.createStatement();
+            ResultSet routeDataFromDB = queryRouteDataStatement.executeQuery("SELECT * FROM routes");
+
+            while(routeDataFromDB.next()) {
+                Route route = new Route(
+                        routeDataFromDB.getString("routeCode"),
+                        routeDataFromDB.getString("startDestination"),
+                        routeDataFromDB.getString("endDestination")
+                );
+                existingRoutes.add(route);
+            }
+            return existingRoutes;
+
+        } catch (SQLException e) {
+            System.out.println("Database error occurred.");
+            Logger.log(e);
+            return existingRoutes;
         }
     }
 
@@ -101,10 +124,10 @@ public class DatabaseConnector {
         }
     }
 
-    public void addBusToDB(Bus bus) {
+    public String addBusToDB(Bus bus) {
         try{
-            // creating an array with employee data
-            String[] busData = {bus.getVehicleNo(), bus.getModel(), bus.getRoute().getRouteCode()};
+            // creating an array with bus data
+            String[] busData = {bus.getVehicleNo(), bus.getModel(), bus.getRoute()};
 
             // creating statement
             String statementString = "INSERT INTO Buses (vehicleNo, model, routeCode, capacity) VALUES (?,?,?,?)";
@@ -114,13 +137,36 @@ public class DatabaseConnector {
             }
             insertBusStatement.setInt(4, bus.getCapacity());
             insertBusStatement.execute();
-            System.out.println("insertion success");
             // closing statement
             insertBusStatement.close();
+            return "DB-DONE";
 
         } catch (SQLException e) {
-            System.out.println("Database error occurred");
             Logger.log(e);
+            return "DB-ERROR";
+        }
+    }
+
+    public String addRouteToDB(Route route) {
+        try{
+            // creating an array with route data
+            String[] routeData = {route.getRouteCode(), route.getStartDestination(), route.getEndDestination()};
+
+            // creating statement
+            String statementString = "INSERT INTO routes (routeCode, startDestination, endDestination) VALUES (?,?,?)";
+            PreparedStatement insertRouteStatement = sqlConnection.prepareStatement(statementString);
+            for (int i=0; i<routeData.length; i++) {
+                insertRouteStatement.setString(i+1, routeData[i]);
+            }
+            insertRouteStatement.execute();
+            // closing statement
+            insertRouteStatement.close();
+            return "DB-DONE";
+
+        } catch (SQLException e) {
+            Logger.log(e);
+            return "DB-ERROR";
+
         }
     }
 }

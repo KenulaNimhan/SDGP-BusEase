@@ -28,6 +28,3 @@
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 69] (through reference chain: java.lang.Object[][0])
 2025-03-04T00:11:54.789375700 Cannot construct instance of `services.organization.Route` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
  at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 71] (through reference chain: java.lang.Object[][0]->services.organization.Bus["route"])
-2025-03-15T10:55:58.103904500 Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
