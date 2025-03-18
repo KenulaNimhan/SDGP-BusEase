@@ -97,4 +97,19 @@ const OrganizationRegistrationScreen = ({ navigation }) => {
           </View>
         </View>
 
-       
+        {/* Register Button */}
+        <TouchableOpacity 
+          style={styles.registerButton}
+          onPress={() => navigation.navigate('Login')}
+        >
+          <Text style={styles.registerButtonText}>Register</Text>
+        </TouchableOpacity>
+
+        {/* Terms and Conditions */}
+        <Text style={styles.termsText}>
+          By clicking on register, I agree to the Terms of Service and Privacy Policy
+        </Text>
+      </ScrollView>
+    </View>
+  );
+};
