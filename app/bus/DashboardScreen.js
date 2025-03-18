@@ -50,4 +50,36 @@ const DashboardScreen = ({ navigation }) => {
     }
   };
   
+  // Function to fetch service due buses (this would be implemented in a real API)
+  const fetchServiceDueBuses = async () => {
+    setLoading(true);
+    // This is a mock implementation - in a real app, you would call an actual API endpoint
+    try {
+      // Simulating API call with timeout
+      setTimeout(() => {
+        // Mock data
+        const mockServiceDueBuses = [
+          {
+            busNumber: 'Bus #123',
+            busBrand: 'Toyota',
+            currentMileage: '10,000 km',
+            dueKm: '500 km'
+          },
+          {
+            busNumber: 'Bus #456',
+            busBrand: 'Mercedes',
+            currentMileage: '15,000 km',
+            dueKm: '200 km'
+          }
+        ];
+        setServiceDueBuses(mockServiceDueBuses);
+        setLoading(false);
+      }, 1000);
+    } catch (error) {
+      console.error('Error fetching service due buses:', error);
+      Alert.alert('Error', 'Failed to fetch service due buses');
+      setLoading(false);
+    }
+  };
+
   
