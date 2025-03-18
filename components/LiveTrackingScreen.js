@@ -49,3 +49,29 @@ const LiveTrackingScreen = ({ route, navigation }) => {
             setLoading(false);
         }
     };
+
+
+    // Set sample data for demo purposes
+    const setSampleData = () => {
+        const sampleRoute = [
+            { latitude: 37.78825, longitude: -122.4324 },  // Starting point - San Francisco
+            { latitude: 37.78925, longitude: -122.4344 },  // Route point 1
+            { latitude: 37.79025, longitude: -122.4364 },  // Route point 2
+            { latitude: 37.79125, longitude: -122.4384 },  // Route point 3
+            { latitude: 37.79225, longitude: -122.4404 },  // Route point 4
+            { latitude: 37.79325, longitude: -122.4424 },  // Route point 5
+            { latitude: 37.79425, longitude: -122.4444 },  // Route point 6
+            { latitude: 37.79525, longitude: -122.4464 },  // Current bus location
+        ];
+        
+        // Set the route points
+        setBusRoute(sampleRoute);
+        
+        // Set the current bus location to the last point in the route
+        const currentLocation = sampleRoute[sampleRoute.length - 1];
+        setBusLocation({
+            ...currentLocation,
+            title: "Bus #123",
+            description: "Route: Downtown Express\nSpeed: 45 km/h\nNext Stop: Market Street"
+        });
+    };
