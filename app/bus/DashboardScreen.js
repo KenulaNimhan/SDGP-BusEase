@@ -192,4 +192,70 @@ const DashboardScreen = ({ navigation }) => {
         </View>
       </Modal>
 
-      
+      <ScrollView style={styles.content}>
+        <Text style={styles.sectionTitle}>Activities</Text>
+        
+        {/* Statistics Section */}
+        <View style={styles.statsContainer}>
+          <View style={styles.topStatsRow}>
+            {/* Drivers Stats */}
+            <View style={[styles.statCard, styles.topStatCard]}>
+              <Text style={styles.statTitle}>Drivers</Text>
+              <View style={styles.pieChartContainer}>
+                <View style={styles.pieChart}>
+                  <Text style={styles.pieChartPercentage}>{stats.drivers.active}%</Text>
+                </View>
+              </View>
+              <View style={styles.statLegend}>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendColor, { backgroundColor: '#FFA500' }]} />
+                  <Text style={styles.legendText}>Active{"\n"}Drivers</Text>
+                </View>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendColor, { backgroundColor: '#DDDDDD' }]} />
+                  <Text style={styles.legendText}>Inactive{"\n"}Drivers</Text>
+                </View>
+              </View>
+            </View>
+          
+            {/* Conductors Stats */}
+            <View style={[styles.statCard, styles.topStatCard]}>
+              <Text style={styles.statTitle}>Conductors</Text>
+              <View style={styles.pieChartContainer}>
+                <View style={styles.pieChart}>
+                  <Text style={styles.pieChartPercentage}>{stats.conductors.active}%</Text>
+                </View>
+              </View>
+              <View style={styles.statLegend}>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendColor, { backgroundColor: '#FFA500' }]} />
+                  <Text style={styles.legendText}>Active Conductors</Text>
+                </View>
+                <View style={styles.legendItem}>
+                  <View style={[styles.legendColor, { backgroundColor: '#DDDDDD' }]} />
+                  <Text style={styles.legendText}>Inactive Conductors</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          
+          {/* Buses Stats */}
+          <View style={[styles.statCard, styles.centerStatCard]}>
+            <Text style={styles.statTitle}>Buses</Text>
+            <View style={styles.pieChartContainer}>
+              <View style={styles.pieChart}>
+                <Text style={styles.pieChartPercentage}>{stats.buses.active}%</Text>
+              </View>
+            </View>
+            <View style={styles.statLegend}>
+              <View style={styles.legendItem}>
+                <View style={[styles.legendColor, { backgroundColor: '#FFA500' }]} />
+                <Text style={styles.legendText}>Active Buses</Text>
+              </View>
+              <View style={styles.legendItem}>
+                <View style={[styles.legendColor, { backgroundColor: '#DDDDDD' }]} />
+                <Text style={styles.legendText}>Inactive Buses</Text>
+              </View>
+            </View>
+          </View>
+        </View>
