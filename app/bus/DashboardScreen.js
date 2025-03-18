@@ -82,4 +82,114 @@ const DashboardScreen = ({ navigation }) => {
     }
   };
 
-  
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButtonContainer}>
+          <Text style={styles.backButton}>←</Text>
+        </TouchableOpacity>
+        <View style={styles.headerTitleContainer}>
+          <Text style={styles.headerTitle}>Dashboard</Text>
+        </View>
+        <TouchableOpacity onPress={() => setMenuVisible(true)} style={styles.menuButtonContainer}>
+          <Text style={styles.menuButton}>☰</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Menu Overlay */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={menuVisible}
+        onRequestClose={() => setMenuVisible(false)}
+      >
+        <View style={styles.menuOverlay}>
+          <View style={styles.menuContainer}>
+            <TouchableOpacity 
+              style={styles.menuItem}
+              onPress={() => {
+                setMenuVisible(false);
+                navigation.navigate('RegisterBus');
+              }}
+            >
+              <Text style={styles.menuItemText}>Register Bus</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.menuItem}
+              onPress={() => {
+                setEmployeeDropdownVisible(!employeeDropdownVisible);
+              }}
+            >
+              <Text style={styles.menuItemText}>Register Employee</Text>
+              <Text style={styles.dropdownIcon}>{employeeDropdownVisible ? '▲' : '▼'}</Text>
+            </TouchableOpacity>
+            
+            {employeeDropdownVisible && (
+              <>
+                <TouchableOpacity 
+                  style={[styles.menuItem, styles.subMenuItem]}
+                  onPress={() => {
+                    setMenuVisible(false);
+                    navigation.navigate('RegisterDriver');
+                  }}
+                >
+                  <Text style={styles.menuItemText}>Register Driver</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity 
+                  style={[styles.menuItem, styles.subMenuItem]}
+                  onPress={() => {
+                    setMenuVisible(false);
+                    navigation.navigate('RegisterConductor');
+                  }}
+                >
+                  <Text style={styles.menuItemText}>Register Conductor</Text>
+                </TouchableOpacity>
+              </>
+            )}
+            
+            <TouchableOpacity 
+              style={styles.menuItem}
+              onPress={() => {
+                setMenuVisible(false);
+                navigation.navigate('ViewCompletedTrips');
+              }}
+            >
+              <Text style={styles.menuItemText}>View Completed Trips</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.menuItem}
+              onPress={() => {
+                setMenuVisible(false);
+                navigation.navigate('ViewBus');
+              }}
+            >
+              <Text style={styles.menuItemText}>View Buses</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.menuItem}
+              onPress={() => {
+                setMenuVisible(false);
+                navigation.navigate('Settings');
+              }}
+            >
+              <Text style={styles.menuItemText}>Settings</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.closeButton}
+              onPress={() => setMenuVisible(false)}
+            >
+              <Text style={styles.closeButtonText}>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      
