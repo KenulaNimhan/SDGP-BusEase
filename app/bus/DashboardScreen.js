@@ -18,4 +18,36 @@ const DashboardScreen = ({ navigation }) => {
     buses: { active: 3, inactive: 97 }
   };
 
+  // State for trips and service due buses data
+  const [ongoingTrips, setOngoingTrips] = useState([]);
+  const [serviceDueBuses, setServiceDueBuses] = useState([]);
+
+  // Sample bus data (will be replaced with API data)
+  const busData = {
+    busNumber: 'Bus #123',
+    routeName: 'City A → City B',
+    driverName: 'John Smith',
+    conductorName: 'Jane Doe',
+    busNumber2: 'Bus #123',
+    busBrand: 'Toyota',
+    currentMileage: '10,000 km',
+    dueKm: '500 km'
+  };
+  
+  // Function to fetch ongoing trips
+  const fetchOngoingTrips = async () => {
+    setLoading(true);
+    try {
+      const response = await API.trip.getOngoingTrips();
+      if (response) {
+        setOngoingTrips(response);
+      }
+    } catch (error) {
+      console.error('Error fetching ongoing trips:', error);
+      Alert.alert('Error', 'Failed to fetch ongoing trips');
+    } finally {
+      setLoading(false);
+    }
+  };
+  
   
