@@ -75,3 +75,102 @@ const LiveTrackingScreen = ({ route, navigation }) => {
             description: "Route: Downtown Express\nSpeed: 45 km/h\nNext Stop: Market Street"
         });
     };
+
+
+
+    // Handle refresh location button press
+    const handleRefreshLocation = () => {
+        fetchBusData();
+    };
+
+    // Handle view bus details button press
+    const handleViewBusDetails = () => {
+        navigation.navigate('BusProfile', { busNumber });
+    };
+
+    // If still loading or no data available, show loading state
+    if (loading || !busLocation) {
+        return (
+            <View style={styles.container}>
+                <StatusBar style="auto" />
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Text style={styles.backButton}>←</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.headerTitle}>Live Tracking</Text>
+                </View>
+                <View style={[styles.mapContainer, styles.loadingContainer]}>
+                    <Text>Loading bus location...</Text>
+                </View>
+            </View>
+        );
+    }
+
+    // Starting point (first point in the route)
+    const startLocation = busRoute[0];
+
+    return (
+        <View style={styles.container}>
+            <StatusBar style="auto" />
+
+            {/* Header */}
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Text style={styles.backButton}>←</Text>
+                </TouchableOpacity>
+                <Text style={styles.headerTitle}>Live Tracking</Text>
+            </View>
+
+            {/* Map View */}
+            <View style={styles.mapContainer}>
+                <MapView
+                    style={styles.map}
+                    initialRegion={{
+                        latitude: busLocation.latitude,
+                        longitude: busLocation.longitude,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                >
+                    {/* Starting Point Marker */}
+                    <Marker
+                        coordinate={startLocation}
+                        title="Start"
+                        pinColor="blue"
+                    />
+
+                    {/* Bus Location Marker */}
+                    <Marker
+                        coordinate={busLocation}
+                        title="Bus"
+                        pinColor="red"
+                    />
+
+                    {/* Route Line */}
+                    <Polyline
+                        coordinates={busRoute}
+                        strokeColor="#FFA500" // Orange color
+                        strokeWidth={4}
+                    />
+                </MapView>
+            </View>
+
+            {/* Action Buttons */}
+            <View style={styles.actionContainer}>
+                <TouchableOpacity 
+                    style={styles.actionButton}
+                    onPress={handleRefreshLocation}
+                >
+                    <Text style={styles.actionButtonText}>Refresh Location</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    style={styles.actionButton}
+                    onPress={handleViewBusDetails}
+                >
+                    <Text style={styles.actionButtonText}>View Bus Details</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    );
+};
