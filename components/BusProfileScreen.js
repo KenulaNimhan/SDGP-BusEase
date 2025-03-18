@@ -247,3 +247,237 @@ const BusProfileScreen = ({ route, navigation }) => {
         </View>
     );
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        paddingTop: 30, // Add padding to account for status bar
+    },
+    trackBusButton: {
+        backgroundColor: '#FFA500',
+        borderRadius: 25,
+        padding: 15,
+        margin: 15,
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    trackBusButtonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 15,
+        paddingHorizontal: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+        backgroundColor: '#FFFFFF',
+        position: 'relative',
+    },
+    backButton: {
+        fontSize: 24,
+        marginRight: 15,
+    },
+    headerTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    loadingText: {
+        marginTop: 10,
+        color: '#666666',
+    },
+    errorContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    errorText: {
+        color: '#DC3545',
+        marginBottom: 15,
+        textAlign: 'center',
+    },
+    retryButton: {
+        backgroundColor: '#FFA500',
+        borderRadius: 25,
+        padding: 10,
+        paddingHorizontal: 20,
+    },
+    retryButtonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+    },
+    busInfoContainer: {
+        padding: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+    },
+    detailsContainer: {
+        marginTop: 15,
+        backgroundColor: '#F9F9F9',
+        borderRadius: 10,
+        padding: 15,
+    },
+    sectionTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#FFA500',
+        marginBottom: 10,
+    },
+    marginTop: {
+        marginTop: 20,
+    },
+    detailRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 8,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+    },
+    detailLabel: {
+        fontSize: 14,
+        color: '#666666',
+        flex: 1,
+    },
+    detailValue: {
+        fontSize: 14,
+        color: '#333333',
+        flex: 2,
+        textAlign: 'right',
+    },
+    infoRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 15,
+    },
+    busNumberContainer: {
+        borderWidth: 1,
+        borderColor: '#FFA500',
+        borderRadius: 20,
+        padding: 10,
+        paddingHorizontal: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    busBrandContainer: {
+        borderWidth: 1,
+        borderColor: '#FFA500',
+        borderRadius: 20,
+        padding: 10,
+        paddingHorizontal: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    busNumber: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#333333',
+    },
+    busBrand: {
+        fontSize: 16,
+        color: '#333333',
+    },
+    statusContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    statusItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    statusLabel: {
+        fontSize: 16,
+        color: '#333333',
+        marginRight: 10,
+    },
+    tripHistoryButton: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 10,
+        padding: 15,
+        margin: 15,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#FFA500',
+    },
+    tripHistoryButtonText: {
+        color: '#333333',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    tripHistoryContainer: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        marginTop: 10,
+    },
+    tripHistoryHeader: {
+        flexDirection: 'row',
+        backgroundColor: '#F5F5F5',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+    },
+    tripHeaderDate: {
+        flex: 1,
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#666666',
+    },
+    tripHeaderRoute: {
+        flex: 1.5,
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#666666',
+    },
+    tripHeaderDriver: {
+        flex: 1,
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#666666',
+    },
+    tripHeaderConductor: {
+        flex: 1,
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#666666',
+    },
+    tripItem: {
+        flexDirection: 'row',
+        paddingVertical: 12,
+        paddingHorizontal: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+        backgroundColor: '#FFFFFF',
+    },
+    tripDate: {
+        flex: 1,
+        fontSize: 14,
+        color: '#333333',
+    },
+    tripRoute: {
+        flex: 1.5,
+        fontSize: 14,
+        color: '#333333',
+    },
+    tripDriver: {
+        flex: 1,
+        fontSize: 14,
+        color: '#333333',
+    },
+    tripConductor: {
+        flex: 1,
+        fontSize: 14,
+        color: '#333333',
+    },
+});
+
+export default BusProfileScreen;
