@@ -115,3 +115,135 @@ const BusProfileScreen = ({ route, navigation }) => {
         setIsServiceEnabled(sampleBusData.serviceStatus);
         setIsActiveEnabled(sampleBusData.activeStatus);
     };
+
+
+
+    // Handle status toggle changes
+    const handleServiceToggle = async (value) => {
+        setIsServiceEnabled(value);
+        // In a real app, you would update the bus status via API
+        // await API.bus.updateBus(busData.id, { serviceStatus: value }, token);
+    };
+
+    const handleActiveToggle = async (value) => {
+        setIsActiveEnabled(value);
+        // In a real app, you would update the bus status via API
+        // await API.bus.updateBus(busData.id, { activeStatus: value }, token);
+    };
+
+    // Show loading state
+    if (loading) {
+        return (
+            <View style={styles.container}>
+                <StatusBar style="auto" />
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Text style={styles.backButton}>←</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.headerTitle}>Bus Profile</Text>
+                </View>
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large" color="#FFA500" />
+                    <Text style={styles.loadingText}>Loading bus data...</Text>
+                </View>
+            </View>
+        );
+    }
+
+    // Show error state
+    if (error) {
+        return (
+            <View style={styles.container}>
+                <StatusBar style="auto" />
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Text style={styles.backButton}>←</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.headerTitle}>Bus Profile</Text>
+                </View>
+                <View style={styles.errorContainer}>
+                    <Text style={styles.errorText}>{error}</Text>
+                    <TouchableOpacity style={styles.retryButton} onPress={fetchBusData}>
+                        <Text style={styles.retryButtonText}>Retry</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        );
+    }
+
+    return (
+        <View style={styles.container}>
+            <StatusBar style="auto" />
+
+            {/* Header */}
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Text style={styles.backButton}>←</Text>
+                </TouchableOpacity>
+                <Text style={styles.headerTitle}>Bus Profile</Text>
+            </View>
+
+            <ScrollView style={styles.content}>
+                {/* Bus Info */}
+                <View style={styles.busInfoContainer}>
+                    <View style={styles.infoRow}>
+                        <View style={styles.busNumberContainer}>
+                            <Text style={styles.busNumber}>{busData.busNumber}</Text>
+                        </View>
+                        <View style={styles.busBrandContainer}>
+                            <Text style={styles.busBrand}>{busData.manufacturer}</Text>
+                        </View>
+                    </View>
+
+                    {/* Status Toggles */}
+                    <View style={styles.statusContainer}>
+                        <View style={styles.statusItem}>
+                            <Text style={styles.statusLabel}>Service</Text>
+                            <Switch
+                                trackColor={{ false: '#DDDDDD', true: '#FFA500' }}
+                                thumbColor={isServiceEnabled ? '#FFFFFF' : '#FFFFFF'}
+                                onValueChange={handleServiceToggle}
+                                value={isServiceEnabled}
+                            />
+                        </View>
+                        <View style={styles.statusItem}>
+                            <Text style={styles.statusLabel}>Active</Text>
+                            <Switch
+                                trackColor={{ false: '#DDDDDD', true: '#FFA500' }}
+                                thumbColor={isActiveEnabled ? '#FFFFFF' : '#FFFFFF'}
+                                onValueChange={handleActiveToggle}
+                                value={isActiveEnabled}
+                            />
+                        </View>
+                    </View>
+
+                    <TouchableOpacity 
+                        style={styles.tripHistoryButton}
+                        onPress={() => {}}
+                    >
+                        <Text style={styles.tripHistoryButtonText}>Trip History</Text>
+                    </TouchableOpacity>
+
+                    {/* Trip History Table */}
+                    <View style={styles.tripHistoryContainer}>
+                        <View style={styles.tripHistoryHeader}>
+                            <Text style={styles.tripHeaderDate}>Date</Text>
+                            <Text style={styles.tripHeaderRoute}>Route</Text>
+                            <Text style={styles.tripHeaderDriver}>Driver</Text>
+                            <Text style={styles.tripHeaderConductor}>Conductor</Text>
+                        </View>
+
+                        {tripHistory.map(trip => (
+                            <View key={trip.id} style={styles.tripItem}>
+                                <Text style={styles.tripDate}>{trip.date}</Text>
+                                <Text style={styles.tripRoute}>{trip.route}</Text>
+                                <Text style={styles.tripDriver}>{trip.driver}</Text>
+                                <Text style={styles.tripConductor}>{trip.conductor}</Text>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+            </ScrollView>
+        </View>
+    );
+};
