@@ -116,4 +116,18 @@ const RegisterBusScreen = ({ navigation }) => {
           </View>
         </View>
 
-        
+        {/* Register Button */}
+        <TouchableOpacity 
+          style={[styles.registerButton, loading && styles.disabledButton]}
+          onPress={handleRegisterBus}
+          disabled={loading}
+        >
+          <Text style={styles.registerButtonText}>
+            {loading ? 'Registering...' : 'Register'}
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
+  );
+};
+
