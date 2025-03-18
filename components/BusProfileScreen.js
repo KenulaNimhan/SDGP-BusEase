@@ -67,3 +67,51 @@ const BusProfileScreen = ({ route, navigation }) => {
             setLoading(false);
         }
     };
+
+
+    // Set sample data for demo purposes
+    const setSampleData = () => {
+        // Sample bus data
+        const sampleBusData = {
+            busNumber: bus?.busNumber || 'ABC-1234',
+            brand: bus?.route || 'Toyota - Coaster',
+            manufacturer: bus?.manufacturer || 'Toyota',
+            model: bus?.model || 'Coaster 2023',
+            registrationDate: bus?.registrationDate || '2023-01-15',
+            lastMaintenance: bus?.lastMaintenance || '2023-06-20',
+            nextMaintenance: bus?.nextMaintenance || '2023-09-20',
+            fuelEfficiency: bus?.fuelEfficiency || '8.5 km/l',
+            totalTrips: bus?.totalTrips || 450,
+            seatingCapacity: bus?.seatingCapacity || 45,
+            currentMileage: bus?.currentMileage || '25,000 km',
+            insuranceNumber: bus?.insuranceNumber || 'INS-789012',
+            insuranceExpiry: bus?.insuranceExpiry || '2024-12-31',
+            engineNumber: bus?.engineNumber || 'ENG-456789',
+            chassisNumber: bus?.chassisNumber || 'CHS-123456',
+            purchaseDate: bus?.purchaseDate || '2023-01-01',
+            purchasePrice: bus?.purchasePrice || '$85,000',
+            serviceHistory: bus?.serviceHistory || [
+                { date: '2023-06-20', type: 'Regular Maintenance', cost: '$500' },
+                { date: '2023-03-15', type: 'Oil Change', cost: '$150' },
+                { date: '2023-01-30', type: 'Tire Replacement', cost: '$800' }
+            ],
+            serviceStatus: bus?.status === 'Active',
+            activeStatus: bus?.status === 'Active'
+        };
+        
+        // Sample trip history data
+        const sampleTripHistory = [
+            { id: '1', date: '2025-03-15', route: 'Colombo-Aluthgama', driver: 'John Doe', conductor: 'Sandun Perera' },
+            { id: '2', date: '2025-03-16', route: 'Kandy-Nuwara', driver: 'Alex Perera', conductor: 'Kasun Jayasekara' },
+            { id: '3', date: '2025-03-17', route: 'Galle-Matara', driver: 'Nimal Silva', conductor: 'Nimal Fernando' },
+            { id: '4', date: '2025-03-18', route: 'Jaffna-Vavuniya', driver: 'Roshan Silva', conductor: 'Nimal Abeykoon' },
+            { id: '5', date: '2025-03-19', route: 'Colombo-Aluthgama', driver: 'Kasun Perera', conductor: 'Isuru Perera' },
+            { id: '6', date: '2025-03-20', route: 'Jaffna-Vavuniya', driver: 'Amal Doe', conductor: 'Harsha Pathira' },
+            { id: '7', date: '2025-03-21', route: 'Colombo-Aluthgama', driver: 'Roshan Perera', conductor: 'Nimal Fernando' },
+        ];
+        
+        setBusData(sampleBusData);
+        setTripHistory(sampleTripHistory);
+        setIsServiceEnabled(sampleBusData.serviceStatus);
+        setIsActiveEnabled(sampleBusData.activeStatus);
+    };
