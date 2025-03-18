@@ -3,13 +3,19 @@ package core.organization.services;
 import core.organization.models.Bus;
 import core.organization.models.Route;
 import core.util.DatabaseConnector;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
 public class BusService {
     // INITIALIZING DATABASE CONNECTOR
-    private static final DatabaseConnector dbConnect = new DatabaseConnector();
+    @Autowired
+    private final DatabaseConnector dbConnect;
+
+    public BusService(DatabaseConnector dbConnect) {
+        this.dbConnect = dbConnect;
+    }
 
     public String addBus(Bus bus) {
         String response = null;

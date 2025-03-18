@@ -1,4 +1,4 @@
 package core.organization.services;
 
-public class OperatorServices {
+public class OperatorService {
 }

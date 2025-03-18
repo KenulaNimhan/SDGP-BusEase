@@ -3,19 +3,22 @@ package core.util;
 import core.organization.models.Employee;
 import core.organization.models.Bus;
 import core.organization.models.Route;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 import java.sql.*;
 
+@Component
 public class DatabaseConnector {
     private static Connection sqlConnection;
 
     public DatabaseConnector() {
         try {
             sqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/busease", "superAdmin", "super_Admin123");
-            System.out.println("connected successfully");
+            System.out.println("Database Connected Successfully");
         } catch (SQLException e) {
-            System.out.println("connection failed");
+            System.out.println("Database Connection Failed");
             Logger.log(e);
         }
     }

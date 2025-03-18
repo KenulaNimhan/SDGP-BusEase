@@ -2,6 +2,7 @@ package core.organization.services;
 
 import core.organization.models.Employee;
 import core.util.DatabaseConnector;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.DateTimeException;
@@ -12,7 +13,12 @@ import java.util.ArrayList;
 @Service
 public class EmployeeService {
     // INITIALIZING DATABASE CONNECTOR
-    private static final DatabaseConnector dbConnect = new DatabaseConnector();
+    @Autowired
+    private final DatabaseConnector dbConnect;
+
+    public EmployeeService(DatabaseConnector dbConnect) {
+        this.dbConnect = dbConnect;
+    }
 
     public ArrayList<Employee> getEmployeeList() {
         return dbConnect.getEmpDataFromDB();
