@@ -113,7 +113,7 @@ public class Operator {
         }
 
 
-        Employee emp = new Employee(fName, lName, NIC, dateOfBirth);
+        Employee emp = new Employee(fName, lName, NIC, dateOfBirth, "");
         Logger.log(this.username+" created EMP;\n"+emp+"\n");
         dbConnect.addEmployeeToDB(emp);
         System.out.println("new employee created successfully");

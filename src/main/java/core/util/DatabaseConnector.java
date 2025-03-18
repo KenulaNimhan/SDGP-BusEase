@@ -104,24 +104,42 @@ public class DatabaseConnector {
         }
     }
 
-    public void addEmployeeToDB(Employee emp) {
+    public int getEmpCount() {
+        int empCount = -1;
+        try{
+            // creating statement
+            Statement queryEmployeeCount = sqlConnection.createStatement();
+            ResultSet totalEmpRecords = queryEmployeeCount.executeQuery("SELECT COUNT(*) FROM employees");
+
+            if (totalEmpRecords.next()){
+                empCount = totalEmpRecords.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Database error occurred.");
+            Logger.log(e);
+        }
+        return empCount;
+    }
+
+    public String addEmployeeToDB(Employee emp) {
         try{
             // creating an array with employee data
-            String[] empData = {emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getNIC(), emp.getDateOfBirth()};
+            String[] empData = {emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getNic(), emp.getDateOfBirth(), emp.getRole()};
 
             // creating statement
-            String statementString = "INSERT INTO Employees (employeeID, firstName, lastName, NIC, DOB) VALUES (?,?,?,?,?)";
+            String statementString = "INSERT INTO Employees (employeeID, firstName, lastName, NIC, DOB, type) VALUES (?,?,?,?,?,?)";
             PreparedStatement insertEmpStatement = sqlConnection.prepareStatement(statementString);
             for (int i=0; i<empData.length; i++) {
                 insertEmpStatement.setString(i+1, empData[i]);
             }
             insertEmpStatement.execute();
-            System.out.println("insertion success");
             // closing statement
             insertEmpStatement.close();
+            return "DB-DONE";
         } catch (SQLException e) {
-            System.out.println("Database error occurred");
             Logger.log(e);
+            return "DB-ERROR";
         }
     }
 

@@ -15,7 +15,7 @@
 2025-01-31T15:23:21.327206 Kenula created EMP;
 Name : Nimhan Dharmawardhane
 EmpID: EM-01
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -23,7 +23,7 @@ DOB  : 2002-05-17
 2025-01-31T15:32:52.410437100 admin created EMP;
 Name : Kenu NImhan
 EmpID: EM-01
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -31,7 +31,7 @@ DOB  : 2002-05-17
 2025-01-31T15:35:18.539454800 admin created EMP;
 Name : Kenula Nimhan
 EmpID: EM-01
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -39,7 +39,7 @@ DOB  : 2002-05-17
 2025-02-11T08:13:18.014901100 admin created EMP;
 Name : Name LastName
 EmpID: EM-11
-NIC  : 45874V
+nic  : 45874V
 DOB  : 2001-8-7
 ---------
 
@@ -47,7 +47,7 @@ DOB  : 2001-8-7
 2025-02-12T15:16:24.001453100 admin created EMP;
 Name : virul eksan
 EmpID: EM-21
-NIC  : 200504704068
+nic  : 200504704068
 DOB  : 2005-02-16
 ---------
 
@@ -55,7 +55,7 @@ DOB  : 2005-02-16
 2025-02-12T18:07:16.744669400 admin created EMP;
 Name : 5 ds
 EmpID: EM-31
-NIC  : 0
+nic  : 0
 DOB  : 0sdf
 ---------
 
@@ -63,7 +63,7 @@ DOB  : 0sdf
 2025-02-12T18:27:30.660662300 admin created EMP;
 Name : 645 654
 EmpID: EM-31
-NIC  : +65
+nic  : +65
 DOB  : 654
 ---------
 
@@ -71,7 +71,7 @@ DOB  : 654
 2025-02-12T18:32:35.939747900 admin created EMP;
 Name : 53 654
 EmpID: EM-41
-NIC  : 654
+nic  : 654
 DOB  : 654
 ---------
 
@@ -79,7 +79,7 @@ DOB  : 654
 2025-02-15T06:24:51.217033700 admin created EMP;
 Name : somapala piris
 EmpID: EM-51
-NIC  : 200504704058
+nic  : 200504704058
 DOB  : saptamber
 ---------
 
@@ -87,7 +87,7 @@ DOB  : saptamber
 2025-02-15T06:54:43.335242 admin created EMP;
 Name : Kag nooby
 EmpID: EM-61
-NIC  : 200504704068
+nic  : 200504704068
 DOB  : 2005-02-16
 ---------
 
@@ -95,7 +95,7 @@ DOB  : 2005-02-16
 2025-02-15T20:43:31.850141800 admin created EMP;
 Name : Sanku Thevarapperuma
 EmpID: EM-71
-NIC  : 123456789123
+nic  : 123456789123
 DOB  : 2005-02-16
 ---------
 
@@ -103,7 +103,7 @@ DOB  : 2005-02-16
 2025-02-15T20:49:07.014898 admin created EMP;
 Name : drgsssssss dsfgdfsgdf
 EmpID: EM-81
-NIC  : 123456789123
+nic  : 123456789123
 DOB  : 1111-11-11
 ---------
 
@@ -111,7 +111,7 @@ DOB  : 1111-11-11
 2025-02-18T10:11:00.425565700 admin created EMP;
 Name : kamal nuvan
 EmpID: EM-91
-NIC  : 123456789V
+nic  : 123456789V
 DOB  : 2222-12-22
 ---------
 
@@ -119,7 +119,7 @@ DOB  : 2222-12-22
 2025-02-18T10:15:19.029712300 admin created EMP;
 Name : virul eksan
 EmpID: EM-101
-NIC  : 123456789v
+nic  : 123456789v
 DOB  : 2022-10-10
 ---------
 
@@ -127,7 +127,7 @@ DOB  : 2022-10-10
 2025-02-18T10:53:59.283196900 admin created EMP;
 Name : NewEmployee NewLastname
 EmpID: EM-31
-NIC  : 123456789v
+nic  : 123456789v
 DOB  : 1111-02-10
 ---------
 
@@ -135,7 +135,7 @@ DOB  : 1111-02-10
 2025-02-18T11:08:58.746429700 admin created EMP;
 Name : virul eksan
 EmpID: EM-41
-NIC  : 123456789123
+nic  : 123456789123
 DOB  : 1920-10-10
 ---------
 
@@ -143,7 +143,7 @@ DOB  : 1920-10-10
 2025-02-18T11:47:04.055439300 admin created EMP;
 Name : admin admin
 EmpID: EM-51
-NIC  : 123456789123
+nic  : 123456789123
 DOB  : 2025-02-18
 ---------
 
@@ -151,7 +151,7 @@ DOB  : 2025-02-18
 2025-02-18T20:33:44.525121800 admin created EMP;
 Name : Kenu Nimhan
 EmpID: EM-31
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -160,7 +160,7 @@ DOB  : 2002-05-17
 2025-02-18T20:36:18.842994400 admin created EMP;
 Name : New EMpl
 EmpID: EM-5
-NIC  : 201923948576
+nic  : 201923948576
 DOB  : 2002-04-21
 ---------
 
@@ -168,7 +168,7 @@ DOB  : 2002-04-21
 2025-02-18T20:38:25.688664500 admin created EMP;
 Name : Kenula Nimhan
 EmpID: EM-6
-NIC  : 200234559056
+nic  : 200234559056
 DOB  : 2002-05-26
 ---------
 
@@ -185,7 +185,7 @@ End Time: 13:13
 2025-03-03T20:19:15.861323900 admin created EMP;
 Name : Kenula Nimhan
 EmpID: EM-7
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -193,7 +193,7 @@ DOB  : 2002-05-17
 2025-03-03T20:21:25.054964300 admin created EMP;
 Name : Kenula Nimhan
 EmpID: EM-8
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 
@@ -201,7 +201,7 @@ DOB  : 2002-05-17
 2025-03-03T20:23:15.791409500 admin created EMP;
 Name : Kenula Nimhan
 EmpID: EM-9
-NIC  : 200213800690
+nic  : 200213800690
 DOB  : 2002-05-17
 ---------
 

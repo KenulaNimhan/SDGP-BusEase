@@ -38,3 +38,28 @@
 2025-03-15T13:30:50.779224600 Column 'route' not found.
 2025-03-17T15:22:44.686122100 Column 'firsName' not found.
 2025-03-17T15:25:14.619663700 Column 'firsName' not found.
+2025-03-18T13:18:57.186950500 Before start of result set
+2025-03-18T13:18:58.748167600 Column 'nic' cannot be null
+2025-03-18T13:20:09.541257200 Before start of result set
+2025-03-18T13:20:10.239499400 Column 'nic' cannot be null
+2025-03-18T13:20:54.696481100 Before start of result set
+2025-03-18T13:20:54.701559700 Column 'nic' cannot be null
+2025-03-18T13:23:06.736466600 Before start of result set
+2025-03-18T13:23:06.741586800 Column 'nic' cannot be null
+2025-03-18T13:23:27.087007400 Before start of result set
+2025-03-18T13:23:27.091002500 Column 'nic' cannot be null
+2025-03-18T13:25:13.787874200 Before start of result set
+2025-03-18T13:26:14.616556800 Before start of result set
+2025-03-18T13:26:14.622550100 Duplicate entry 'EM01' for key 'PRIMARY'
+2025-03-18T14:41:00.725029800 Before start of result set
+2025-03-18T14:41:01.425535700 Duplicate entry 'EM-1' for key 'PRIMARY'
+2025-03-18T14:42:40.550881100 Before start of result set
+2025-03-18T14:42:40.924342100 Duplicate entry 'EM-1' for key 'PRIMARY'
+2025-03-18T14:46:05.196932100 Before start of result set
+2025-03-18T15:07:28.830269400 Before start of result set
+2025-03-18T15:07:29.225286300 Duplicate entry 'EM-0' for key 'PRIMARY'
+2025-03-18T20:45:15.348999100 Before start of result set
+2025-03-18T20:45:15.851348500 Duplicate entry 'EM-0' for key 'PRIMARY'
+2025-03-18T20:46:05.887979100 Before start of result set
+2025-03-18T20:46:07.376827 Duplicate entry 'EM-0' for key 'PRIMARY'
+2025-03-18T21:01:34.802200800 Duplicate entry 'EM-6' for key 'PRIMARY'
