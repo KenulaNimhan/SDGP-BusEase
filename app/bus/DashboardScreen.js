@@ -330,3 +330,236 @@ const DashboardScreen = ({ navigation }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    paddingTop: 30, // Add padding to account for status bar
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+    backgroundColor: '#FFFFFF',
+    position: 'relative',
+  },
+  backButtonContainer: {
+    position: 'absolute',
+    left: 15,
+    zIndex: 10,
+    padding: 5,
+  },
+  backButton: {
+    fontSize: 28,
+    color: '#000000',
+  },
+  menuButtonContainer: {
+    position: 'absolute',
+    right: 20,
+    zIndex: 10,
+  },
+  headerTitleContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333333',
+    textAlign: 'center',
+  },
+  menuButton: {
+    fontSize: 24,
+    color: '#333333',
+    padding: 5,
+  },
+  content: {
+    flex: 1,
+    padding: 15,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 15,
+  },
+  statsContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  topStatsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 15,
+  },
+  statCard: {
+    backgroundColor: '#F9F9F9',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    alignItems: 'center',
+  },
+  topStatCard: {
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  centerStatCard: {
+    width: '100%',
+    alignSelf: 'center',
+  },
+  statTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  pieChartContainer: {
+    width: 100,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  pieChart: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 20,
+    borderColor: '#FFA500',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+  },
+  pieChartPercentage: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333333',
+  },
+  statLegend: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+  },
+  legendItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  legendColor: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    marginRight: 5,
+  },
+  legendText: {
+    fontSize: 12,
+    color: '#666666',
+  },
+  actionButton: {
+    backgroundColor: '#FFA500',
+    borderRadius: 10,
+    padding: 15,
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  actionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  busInfoContainer: {
+    backgroundColor: '#F9F9F9',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 20,
+  },
+  busInfoItem: {
+    fontSize: 14,
+    color: '#333333',
+    marginBottom: 5,
+  },
+  loadingText: {
+    fontSize: 14,
+    color: '#666666',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    padding: 10,
+  },
+  noDataText: {
+    fontSize: 14,
+    color: '#666666',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    padding: 10,
+  },
+  tripItem: {
+    marginBottom: 15,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+  },
+  busItem: {
+    marginBottom: 15,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+  },
+  // Add new styles for the menu
+  menuOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+  },
+  menuContainer: {
+    width: 250,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    marginTop: 60,
+    marginRight: 10,
+    padding: 10,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  menuItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+  },
+  menuItemText: {
+    fontSize: 16,
+    color: '#333333',
+  },
+  dropdownIcon: {
+    fontSize: 12,
+    color: '#333333',
+  },
+  subMenuItem: {
+    paddingLeft: 25,
+    paddingVertical: 12,
+    backgroundColor: '#F9F9F9',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#E0E0E0',
+  },
+  closeButton: {
+    marginTop: 10,
+    padding: 10,
+    alignItems: 'center',
+  },
+  closeButtonText: {
+    color: '#FFA500',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
+
+export default DashboardScreen;
