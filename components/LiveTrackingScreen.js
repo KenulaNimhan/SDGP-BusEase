@@ -174,3 +174,62 @@ const LiveTrackingScreen = ({ route, navigation }) => {
         </View>
     );
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        paddingTop: 30, // Add padding to account for status bar
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 15,
+        paddingHorizontal: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EEEEEE',
+        backgroundColor: '#FFFFFF',
+        position: 'relative',
+    },
+    backButton: {
+        fontSize: 24,
+        marginRight: 15,
+    },
+    headerTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    mapContainer: {
+        flex: 1,
+        overflow: 'hidden',
+    },
+    loadingContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    map: {
+        width: '100%',
+        height: '100%',
+    },
+    actionContainer: {
+        padding: 15,
+        backgroundColor: '#FFFFFF',
+        borderTopWidth: 1,
+        borderTopColor: '#EEEEEE',
+    },
+    actionButton: {
+        backgroundColor: '#FFA500',
+        borderRadius: 25,
+        padding: 15,
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    actionButtonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+});
+
+export default LiveTrackingScreen;
