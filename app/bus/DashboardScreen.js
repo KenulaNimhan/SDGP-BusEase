@@ -259,3 +259,74 @@ const DashboardScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
+
+        {/* Ongoing Trips Button */}
+        <TouchableOpacity 
+          style={styles.actionButton}
+          onPress={() => {
+            setOngoingTripsVisible(!ongoingTripsVisible);
+            if (!ongoingTripsVisible) {
+              fetchOngoingTrips();
+            }
+          }}
+        >
+          <Text style={styles.actionButtonText}>Ongoing Trips</Text>
+        </TouchableOpacity>
+
+        {/* Bus Information - Only shown when ongoingTripsVisible is true */}
+        {ongoingTripsVisible && (
+          <View style={styles.busInfoContainer}>
+            {loading ? (
+              <Text style={styles.loadingText}>Loading ongoing trips...</Text>
+            ) : ongoingTrips && ongoingTrips.length > 0 ? (
+              ongoingTrips.map((trip, index) => (
+                <View key={index} style={styles.tripItem}>
+                  <Text style={styles.busInfoItem}>{trip.busNumber || busData.busNumber}</Text>
+                  <Text style={styles.busInfoItem}>Route Name: "{trip.routeName || busData.routeName}"</Text>
+                  <Text style={styles.busInfoItem}>Driver Name: "{trip.driverName || busData.driverName}"</Text>
+                  <Text style={styles.busInfoItem}>Conductor Name: "{trip.conductorName || busData.conductorName}"</Text>
+                </View>
+              ))
+            ) : (
+              <Text style={styles.noDataText}>No ongoing trips available</Text>
+            )}
+          </View>
+        )}
+
+        {/* Service Due Button */}
+        <TouchableOpacity 
+          style={styles.actionButton}
+          onPress={() => {
+            setServiceDueBusesVisible(!serviceDueBusesVisible);
+            if (!serviceDueBusesVisible) {
+              fetchServiceDueBuses();
+            }
+          }}
+        >
+          <Text style={styles.actionButtonText}>Service Due Buses</Text>
+        </TouchableOpacity>
+
+        {/* Service Due Information - Only shown when serviceDueBusesVisible is true */}
+        {serviceDueBusesVisible && (
+          <View style={styles.busInfoContainer}>
+            {loading ? (
+              <Text style={styles.loadingText}>Loading service due buses...</Text>
+            ) : serviceDueBuses && serviceDueBuses.length > 0 ? (
+              serviceDueBuses.map((bus, index) => (
+                <View key={index} style={styles.busItem}>
+                  <Text style={styles.busInfoItem}>{bus.busNumber || busData.busNumber2}</Text>
+                  <Text style={styles.busInfoItem}>Bus Brand: "{bus.busBrand || busData.busBrand}"</Text>
+                  <Text style={styles.busInfoItem}>Current Mileage: {bus.currentMileage || busData.currentMileage}</Text>
+                  <Text style={styles.busInfoItem}>Due From How Many KM: {bus.dueKm || busData.dueKm}</Text>
+                </View>
+              ))
+            ) : (
+              <Text style={styles.noDataText}>No service due buses available</Text>
+            )}
+          </View>
+        )}
+      </ScrollView>
+    </View>
+  );
+};
+
