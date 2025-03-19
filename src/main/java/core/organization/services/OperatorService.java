@@ -3,6 +3,7 @@ package core.organization.services;
 import core.organization.models.Operator;
 import core.util.DatabaseConnector;
 import core.util.Logger;
+import core.util.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,6 @@ public class OperatorService {
 
     public String saveOperator(Operator ops) {
         try{
-            System.out.println(ops.getUsername()+" "+ops.getEmail()+" "+ops.getPassword());
             String psw = ops.getPassword();
             ops.setPassword(encoder.encode(psw));
             return dbConnect.registerOperator(ops);
@@ -31,7 +31,13 @@ public class OperatorService {
         }
     }
 
-    public void opsLogin() {
-        
+    public boolean opsLogin(LoginRequest loginRequest) {
+        String databaseResponse = dbConnect.getPassword(loginRequest.getUserNameOrEmail(), "operators");
+
+        if(databaseResponse.equals("DB-ERROR") || databaseResponse.equals("invalid user")) {
+            return false;
+        } else {
+            return encoder.matches(loginRequest.getPassword(), databaseResponse);
+        }
     }
 }

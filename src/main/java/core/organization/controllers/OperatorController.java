@@ -2,6 +2,7 @@ package core.organization.controllers;
 
 import core.organization.models.Operator;
 import core.organization.services.OperatorService;
+import core.util.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,11 @@ public class OperatorController {
     @PostMapping("/addNew")
     private String addNewOperator(@RequestBody Operator ops) {
         return opsService.saveOperator(ops);
+    }
+
+    @PostMapping("/login")
+    private boolean opsLogin(@RequestBody LoginRequest loginRequest) {
+        return opsService.opsLogin(loginRequest);
     }
 
 }

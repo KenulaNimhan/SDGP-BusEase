@@ -126,6 +126,27 @@ public class DatabaseConnector {
         return empCount;
     }
 
+    public String getPassword(String userIdentification, String tableName) {
+        try{
+            // creating statement
+            String statementString = String.format("""
+                    SELECT * FROM %s WHERE username LIKE '%s' OR email LIKE '%s'
+                    """, tableName, userIdentification, userIdentification);
+            Statement queryPassword = sqlConnection.createStatement();
+            ResultSet queriedRecord = queryPassword.executeQuery(statementString);
+
+            if (queriedRecord.next()) {
+                return queriedRecord.getString("password");
+            } else {
+                return "invalid user";
+            }
+
+        } catch (SQLException e) {
+            Logger.log(e);
+            return "DB-ERROR";
+        }
+    }
+
     public String registerOperator(Operator ops) {
         try{
             // creating an array with operator data
