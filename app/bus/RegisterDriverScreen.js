@@ -27,3 +27,25 @@ const RegisterDriverScreen = ({ navigation }) => {
       mobile,
       licenseId
     };
+
+    setLoading(true);
+
+    try {
+      // Mock token - in a real app, this would come from authentication state
+      const token = 'mock-token';
+      
+      // Call API to register driver
+      const response = await API.driver.registerDriver(driverData, token);
+      
+      if (response) {
+        Alert.alert('Success', 'Driver registered successfully');
+        navigation.navigate('Dashboard');
+      }
+    } catch (error) {
+      console.error('Error registering driver:', error);
+      Alert.alert('Error', error.message || 'Failed to register driver. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
