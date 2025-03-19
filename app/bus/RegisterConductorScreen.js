@@ -60,4 +60,10 @@ const RegisterConductorScreen = ({ navigation }) => {
       return;
     }
 
-    
+    // Validate mobile
+    if (!validateMobile(mobile)) {
+      Alert.alert('Validation Error', 'Please enter a valid 10-digit mobile number');
+      return;
+    }
+
+   
