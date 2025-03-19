@@ -2,6 +2,7 @@ package core.util;
 
 import core.organization.models.Employee;
 import core.organization.models.Bus;
+import core.organization.models.Operator;
 import core.organization.models.Route;
 import org.springframework.stereotype.Component;
 
@@ -123,6 +124,27 @@ public class DatabaseConnector {
             Logger.log(e);
         }
         return empCount;
+    }
+
+    public String registerOperator(Operator ops) {
+        try{
+            // creating an array with operator data
+            String[] opsData = {ops.getUsername(), ops.getPassword(), ops.getEmail()};
+
+            // creating statement
+            String statementString = "INSERT INTO operators (username, password, email) VALUES (?,?,?)";
+            PreparedStatement insertOpsStatement = sqlConnection.prepareStatement(statementString);
+            for (int i=0; i<opsData.length; i++) {
+                insertOpsStatement.setString(i+1, opsData[i]);
+            }
+            insertOpsStatement.execute();
+            // closing statement
+            insertOpsStatement.close();
+            return "DB-DONE";
+        } catch (SQLException e) {
+            Logger.log(e);
+            return "DB-ERROR";
+        }
     }
 
     public String addEmployeeToDB(Employee emp) {
