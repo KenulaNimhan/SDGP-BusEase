@@ -16,4 +16,10 @@ const RegisterConductorScreen = ({ navigation }) => {
     return name.length >= 2 && /^[a-zA-Z\s]*$/.test(name);
   };
 
+  // Function to validate email
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   
