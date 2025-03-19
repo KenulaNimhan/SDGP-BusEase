@@ -66,4 +66,10 @@ const RegisterConductorScreen = ({ navigation }) => {
       return;
     }
 
+    // Validate license ID
+    if (!validateLicenseId(licenseId)) {
+      Alert.alert('Validation Error', 'License ID must be 5-15 characters and contain only uppercase letters, numbers, and hyphens');
+      return;
+    }
+
    
