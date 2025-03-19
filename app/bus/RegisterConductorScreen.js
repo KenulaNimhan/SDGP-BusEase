@@ -48,4 +48,10 @@ const RegisterConductorScreen = ({ navigation }) => {
       return;
     }
 
-    
+    // Validate last name
+    if (!validateName(lastName)) {
+      Alert.alert('Validation Error', 'Last name must be at least 2 characters long and contain only letters');
+      return;
+    }
+
+  
