@@ -22,4 +22,10 @@ const RegisterConductorScreen = ({ navigation }) => {
     return emailRegex.test(email);
   };
 
-  
+  // Function to validate mobile number
+  const validateMobile = (mobile) => {
+    const mobileRegex = /^[0-9]{10}$/;
+    return mobileRegex.test(mobile);
+  };
+
+ 
