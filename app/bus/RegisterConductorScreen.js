@@ -176,3 +176,19 @@ const RegisterConductorScreen = ({ navigation }) => {
             />
           </View>
         </View>
+
+        {/* Register Button */}
+        <TouchableOpacity 
+          style={[styles.registerButton, loading && styles.disabledButton]}
+          onPress={handleRegisterConductor}
+          disabled={loading}
+        >
+          <Text style={styles.registerButtonText}>
+            {loading ? 'Registering...' : 'Add Conductor'}
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
+  );
+};
+
