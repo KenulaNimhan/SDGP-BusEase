@@ -34,4 +34,12 @@ const RegisterConductorScreen = ({ navigation }) => {
     return licenseRegex.test(id);
   };
 
-  
+  // Function to handle conductor registration
+  const handleRegisterConductor = async () => {
+    // Validate input fields
+    if (!firstName || !lastName || !email || !mobile || !licenseId) {
+      Alert.alert('Validation Error', 'Please fill in all fields');
+      return;
+    }
+
+   
