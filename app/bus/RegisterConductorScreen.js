@@ -83,4 +83,20 @@ const RegisterConductorScreen = ({ navigation }) => {
 
     setLoading(true);
 
-    
+    try {
+      // Call API to register conductor
+      const response = await API.conductor.registerConductor(conductorData);
+      
+      if (response) {
+        Alert.alert('Success', 'Conductor registered successfully');
+        navigation.navigate('Dashboard');
+      }
+    } catch (error) {
+      console.error('Error registering conductor:', error);
+      Alert.alert('Error', error.message || 'Failed to register conductor. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  
