@@ -72,4 +72,15 @@ const RegisterConductorScreen = ({ navigation }) => {
       return;
     }
 
-   
+    // Prepare conductor data
+    const conductorData = {
+      firstName,
+      lastName,
+      email,
+      mobile,
+      licenseId
+    };
+
+    setLoading(true);
+
+    
