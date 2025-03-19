@@ -117,3 +117,19 @@ const RegisterDriverScreen = ({ navigation }) => {
             />
           </View>
         </View>
+
+        {/* Register Button */}
+        <TouchableOpacity 
+          style={[styles.registerButton, loading && styles.disabledButton]}
+          onPress={handleRegisterDriver}
+          disabled={loading}
+        >
+          <Text style={styles.registerButtonText}>
+            {loading ? 'Registering...' : 'Add Driver'}
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
+  );
+};
+
