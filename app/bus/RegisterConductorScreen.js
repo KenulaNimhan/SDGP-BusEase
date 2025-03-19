@@ -28,4 +28,10 @@ const RegisterConductorScreen = ({ navigation }) => {
     return mobileRegex.test(mobile);
   };
 
- 
+  // Function to validate license ID
+  const validateLicenseId = (id) => {
+    const licenseRegex = /^[A-Z0-9-]{5,15}$/;
+    return licenseRegex.test(id);
+  };
+
+  
