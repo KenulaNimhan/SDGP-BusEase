@@ -54,4 +54,10 @@ const RegisterConductorScreen = ({ navigation }) => {
       return;
     }
 
-  
+    // Validate email
+    if (!validateEmail(email)) {
+      Alert.alert('Validation Error', 'Please enter a valid email address');
+      return;
+    }
+
+    
