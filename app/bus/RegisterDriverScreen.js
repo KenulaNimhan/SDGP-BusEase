@@ -19,4 +19,11 @@ const RegisterDriverScreen = ({ navigation }) => {
       return;
     }
 
-   
+    // Prepare driver data
+    const driverData = {
+      firstName,
+      lastName,
+      email,
+      mobile,
+      licenseId
+    };
