@@ -107,7 +107,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EEEEEE',
   },
-
+  updateButton: {
+    backgroundColor: '#FFA500',
+    borderRadius: 25,
+    padding: 15,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  updateButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
 
 export default UsernameChangeScreen;
