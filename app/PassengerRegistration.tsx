@@ -22,7 +22,90 @@ const PassengerRegistrationScreen = ({ navigation }) => {
         <Text style={styles.headerTitle}>Passenger Registration</Text>
       </View>
 
-     
+      <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
+        <Text style={styles.stepText}>Step 2 / 2</Text>
+        
+        {/* Registration Form */}
+        <View style={styles.formContainer}>
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Select User Role</Text>
+            <View style={styles.roleSelector}>
+              <TouchableOpacity style={styles.roleButton}>
+                <Text style={styles.roleButtonText}>Passenger</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>User Name</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your name"
+              value={firstName}
+              onChangeText={setFirstName}
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Email</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your email"
+              value={email}
+              onChangeText={setEmail}
+              keyboardType="email-address"
+              autoCapitalize="none"
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Mobile No</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your mobile number"
+              value={mobile}
+              onChangeText={setMobile}
+              keyboardType="phone-pad"
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Password</Text>
+            <View style={styles.passwordContainer}>
+              <TextInput
+                style={styles.passwordInput}
+                placeholder="Create a password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry={!showPassword}
+                autoCapitalize="none"
+              />
+              <TouchableOpacity 
+                style={styles.eyeIcon} 
+                onPress={() => setShowPassword(!showPassword)}
+              >
+                <Text>👁</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+        {/* Register Button */}
+        <TouchableOpacity 
+          style={styles.registerButton}
+          onPress={() => navigation.navigate('Login')}
+        >
+          <Text style={styles.registerButtonText}>Register</Text>
+        </TouchableOpacity>
+
+        {/* Terms and Conditions */}
+        <Text style={styles.termsText}>
+          By clicking on register, I agree to the Terms of Service and Privacy Policy
+        </Text>
+      </ScrollView>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
