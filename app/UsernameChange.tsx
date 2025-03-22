@@ -7,7 +7,6 @@ const UsernameChangeScreen = ({ navigation }) => {
   const [newUsername, setNewUsername] = useState('');
 
   return (
-    
     <View style={styles.container}>
       <StatusBar style="auto" />
       
@@ -60,6 +59,55 @@ const UsernameChangeScreen = ({ navigation }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    paddingTop: 30,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+  },
+  backButtonContainer: {
+    position: 'absolute',
+    left: 15,
+    zIndex: 1,
+  },
+  backButton: {
+    fontSize: 24,
+  },
+  titleContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  formContainer: {
+    padding: 20,
+  },
+  inputGroup: {
+    marginBottom: 20,
+  },
+  label: {
+    fontSize: 14,
+    color: '#333333',
+    marginBottom: 5,
+  },
+  input: {
+    backgroundColor: '#F5F5F5',
+    borderRadius: 10,
+    padding: 15,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#EEEEEE',
+  },
 
+});
 
 export default UsernameChangeScreen;
