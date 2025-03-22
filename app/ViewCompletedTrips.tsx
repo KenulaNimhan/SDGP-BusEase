@@ -112,6 +112,114 @@ const ViewCompletedTripsScreen = ({ navigation }) => {
   );
 };
 
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    paddingTop: 30,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEEEEE',
+  },
+  backButton: {
+    fontSize: 24,
+    marginRight: 15,
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 10,
+    color: '#666666',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    color: '#DC3545',
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  retryButton: {
+    backgroundColor: '#FFA500',
+    borderRadius: 25,
+    padding: 10,
+    paddingHorizontal: 20,
+  },
+  retryButtonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyText: {
+    color: '#666666',
+    fontSize: 16,
+  },
+  tripsList: {
+    flex: 1,
+  },
+  tripsListContent: {
+    padding: 15,
+  },
+  tripItem: {
+    backgroundColor: '#F9F9F9',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: '#EEEEEE',
+  },
+  tripHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  busId: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333333',
+  },
+  tripStatus: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#28A745',
+    backgroundColor: '#E6F7E6',
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 10,
+  },
+  tripDetail: {
+    flexDirection: 'row',
+    marginBottom: 5,
+  },
+  tripLabel: {
+    fontSize: 14,
+    color: '#666666',
+    width: 80,
+  },
+  tripValue: {
+    fontSize: 14,
+    color: '#333333',
+    flex: 1,
+  },
+});
 
 export default ViewCompletedTripsScreen;
