@@ -39,8 +39,20 @@ const ViewCompletedTripsScreen = ({ navigation }) => {
       setLoading(false);
     }
   };
+  
 
-
+    // Set sample data for demo purposes
+    const setSampleData = () => {
+        const sampleTrips = [
+          { id: '1', busId: 'Bus #123', route: 'City A → City B', date: '2023-07-01', driver: 'John Smith', conductor: 'Jane Doe', status: 'Completed' },
+          { id: '2', busId: 'Bus #456', route: 'City C → City D', date: '2023-07-02', driver: 'Robert Johnson', conductor: 'Sarah Williams', status: 'Completed' },
+          { id: '3', busId: 'Bus #789', route: 'City E → City F', date: '2023-07-03', driver: 'Michael Brown', conductor: 'Emily Davis', status: 'Completed' },
+          { id: '4', busId: 'Bus #101', route: 'City G → City H', date: '2023-07-04', driver: 'David Wilson', conductor: 'Lisa Miller', status: 'Completed' },
+          { id: '5', busId: 'Bus #202', route: 'City I → City J', date: '2023-07-05', driver: 'James Taylor', conductor: 'Jennifer Anderson', status: 'Completed' },
+        ];
+        
+        setCompletedTrips(sampleTrips);
+      };
 
   // Render each trip item
   const renderTripItem = ({ item }) => (
