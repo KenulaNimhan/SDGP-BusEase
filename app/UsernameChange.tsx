@@ -8,6 +8,55 @@ const UsernameChangeScreen = ({ navigation }) => {
 
   return (
     
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity 
+          style={styles.backButtonContainer}
+          onPress={() => navigation.goBack()}
+        >
+          <Text style={styles.backButton}>←</Text>
+        </TouchableOpacity>
+        <View style={styles.titleContainer}>
+          <Text style={styles.headerTitle}>Username Change</Text>
+        </View>
+      </View>
+
+      {/* Form */}
+      <View style={styles.formContainer}>
+        <View style={styles.inputGroup}>
+          <Text style={styles.label}>Current Username</Text>
+          <TextInput
+            style={styles.input}
+            value={currentUsername}
+            editable={false}
+          />
+        </View>
+
+        <View style={styles.inputGroup}>
+          <Text style={styles.label}>New Username</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter new username"
+            value={newUsername}
+            onChangeText={setNewUsername}
+            autoCapitalize="none"
+          />
+        </View>
+
+        <TouchableOpacity 
+          style={styles.updateButton}
+          onPress={() => {
+            console.log('Username updated');
+            navigation.goBack();
+          }}
+        >
+          <Text style={styles.updateButtonText}>Update Username</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
