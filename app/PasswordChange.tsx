@@ -84,7 +84,15 @@ const PasswordChangeScreen = ({ navigation }) => {
           </View>
         </View>
 
-       
+        <TouchableOpacity 
+          style={styles.updateButton}
+          onPress={() => {
+            console.log('Password updated');
+            navigation.goBack();
+          }}
+        >
+          <Text style={styles.updateButtonText}>Update Password</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
