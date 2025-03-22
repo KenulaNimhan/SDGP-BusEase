@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: 15,
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 200
   },
   registerButtonText: {
     color: '#FFFFFF',
