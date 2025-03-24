@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57ff31b-15f4-4bd7-9c03-a45c3821335d" name="Changes" comment="Added toString method">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Logs/exception_logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/controllers/OperatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/organization/services/OperatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/organization/services/OperatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/util/DatabaseConnector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,

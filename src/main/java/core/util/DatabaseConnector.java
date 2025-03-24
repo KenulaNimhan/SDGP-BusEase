@@ -2,20 +2,24 @@ package core.util;
 
 import core.organization.models.Employee;
 import core.organization.models.Bus;
+import core.organization.models.Operator;
 import core.organization.models.Route;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 import java.sql.*;
 
+@Component
 public class DatabaseConnector {
     private static Connection sqlConnection;
 
     public DatabaseConnector() {
         try {
             sqlConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/busease", "superAdmin", "super_Admin123");
-            System.out.println("connected successfully");
+            System.out.println("Database Connected Successfully");
         } catch (SQLException e) {
-            System.out.println("connection failed");
+            System.out.println("Database Connection Failed");
             Logger.log(e);
         }
     }
@@ -104,24 +108,84 @@ public class DatabaseConnector {
         }
     }
 
-    public void addEmployeeToDB(Employee emp) {
+    public int getEmpCount() {
+        int empCount = -1;
         try{
-            // creating an array with employee data
-            String[] empData = {emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getNIC(), emp.getDateOfBirth()};
+            // creating statement
+            Statement queryEmployeeCount = sqlConnection.createStatement();
+            ResultSet totalEmpRecords = queryEmployeeCount.executeQuery("SELECT COUNT(*) FROM employees");
+
+            if (totalEmpRecords.next()){
+                empCount = totalEmpRecords.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Database error occurred.");
+            Logger.log(e);
+        }
+        return empCount;
+    }
+
+    public String getPassword(String userIdentification, String tableName) {
+        try{
+            // creating statement
+            String statementString = String.format("""
+                    SELECT * FROM %s WHERE username LIKE '%s' OR email LIKE '%s'
+                    """, tableName, userIdentification, userIdentification);
+            Statement queryPassword = sqlConnection.createStatement();
+            ResultSet queriedRecord = queryPassword.executeQuery(statementString);
+
+            if (queriedRecord.next()) {
+                return queriedRecord.getString("password");
+            } else {
+                return "invalid user";
+            }
+
+        } catch (SQLException e) {
+            Logger.log(e);
+            return "DB-ERROR";
+        }
+    }
+
+    public String registerOperator(Operator ops) {
+        try{
+            // creating an array with operator data
+            String[] opsData = {ops.getUsername(), ops.getPassword(), ops.getEmail()};
 
             // creating statement
-            String statementString = "INSERT INTO Employees (employeeID, firstName, lastName, NIC, DOB) VALUES (?,?,?,?,?)";
+            String statementString = "INSERT INTO operators (username, password, email) VALUES (?,?,?)";
+            PreparedStatement insertOpsStatement = sqlConnection.prepareStatement(statementString);
+            for (int i=0; i<opsData.length; i++) {
+                insertOpsStatement.setString(i+1, opsData[i]);
+            }
+            insertOpsStatement.execute();
+            // closing statement
+            insertOpsStatement.close();
+            return "DB-DONE";
+        } catch (SQLException e) {
+            Logger.log(e);
+            return "DB-ERROR";
+        }
+    }
+
+    public String addEmployeeToDB(Employee emp) {
+        try{
+            // creating an array with employee data
+            String[] empData = {emp.getEmployeeID(), emp.getFirstName(), emp.getLastName(), emp.getNic(), emp.getDateOfBirth(), emp.getRole()};
+
+            // creating statement
+            String statementString = "INSERT INTO Employees (employeeID, firstName, lastName, NIC, DOB, type) VALUES (?,?,?,?,?,?)";
             PreparedStatement insertEmpStatement = sqlConnection.prepareStatement(statementString);
             for (int i=0; i<empData.length; i++) {
                 insertEmpStatement.setString(i+1, empData[i]);
             }
             insertEmpStatement.execute();
-            System.out.println("insertion success");
             // closing statement
             insertEmpStatement.close();
+            return "DB-DONE";
         } catch (SQLException e) {
-            System.out.println("Database error occurred");
             Logger.log(e);
+            return "DB-ERROR";
         }
     }
 

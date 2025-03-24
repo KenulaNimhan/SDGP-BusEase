@@ -2,6 +2,7 @@ package core.organization.services;
 
 import core.organization.models.Route;
 import core.util.DatabaseConnector;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,7 +10,12 @@ import java.util.ArrayList;
 @Service
 public class RouteService {
     // INITIALIZING DATABASE CONNECTOR
-    private static final DatabaseConnector dbConnect = new DatabaseConnector();
+    @Autowired
+    private final DatabaseConnector dbConnect;
+
+    public RouteService(DatabaseConnector dbConnect) {
+        this.dbConnect = dbConnect;
+    }
 
     public boolean addRoute(Route route) {
         if(route.getRouteCode() == null || route.getStartDestination() == null || route.getEndDestination() == null) {
